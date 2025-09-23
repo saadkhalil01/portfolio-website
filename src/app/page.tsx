@@ -2,40 +2,72 @@
 
 import { useState } from 'react';
 import Image from "next/image";
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowLeftIcon,
+  DevicePhoneMobileIcon,
+  CogIcon,
+  HeartIcon,
+  SparklesIcon,
+  CpuChipIcon,
+  UserGroupIcon,
+  SwatchIcon,
+  StarIcon
+} from '@heroicons/react/24/outline';
+// Icon component for each app
+const AppIcon = ({ name }: { name: string }) => {
+  const iconProps = { className: "w-16 h-16" };
+
+  switch (name) {
+    case "MyndSpark":
+      return <SparklesIcon {...iconProps} />;
+    case "LoyalAI":
+      return <CpuChipIcon {...iconProps} />;
+    case "FanGenie":
+      return <UserGroupIcon {...iconProps} />;
+    case "Spectrum":
+      return <SwatchIcon {...iconProps} />;
+    default:
+      return <SparklesIcon {...iconProps} />;
+  }
+};
+
 // Mock data for apps - you can replace these with actual app data later
 const apps = [
   {
     id: 1,
     name: "MyndSpark",
-    logo: "🧠",
+    logo: "MyndSpark", // Using name to identify which icon to render
     description: "Mental wellness app with real-time push/in-app notifications and an AI chatbot for mental health. Available on App Store and Play Store.",
     screens: ["Home", "Ideas", "Brainstorm", "Projects", "Profile"],
-    technologies: ["React Native", "Node.js", "MongoDB", "Express", "Push Notifications", "AI Chatbot"]
+    technologies: ["React Native", "Node.js", "MongoDB", "Express", "AI Chatbot"],
+    features: ["Real-time Push Notifications", "In-app Notifications", "AI Mental Health Chatbot"]
   },
   {
     id: 2,
     name: "LoyalAI",
-    logo: "🤖",
+    logo: "LoyalAI",
     description: "Relationship-focused loyalty assistant with real-time push/in-app notifications and an AI chatbot for relationships. Available on App Store.",
     screens: ["Dashboard", "Rewards", "Analytics", "Campaigns", "Settings"],
-    technologies: ["React Native", "Node.js", "MongoDB", "Express", "Push Notifications", "AI Chatbot"]
+    technologies: ["React Native", "Node.js", "MongoDB", "Express", "AI Chatbot"],
+    features: ["Real-time Push Notifications", "In-app Notifications", "Relationship AI Assistant"]
   },
   {
     id: 3,
     name: "FanGenie",
-    logo: "🎭",
+    logo: "FanGenie",
     description: "Fan engagement platform with push notifications and Stripe Payment Sheet integration. Available on App Store.",
     screens: ["Feed", "Create", "Fans", "Analytics", "Monetize"],
-    technologies: ["React Native", "Node.js", "MongoDB", "Express", "Push Notifications", "Stripe Payments"]
+    technologies: ["React Native", "Node.js", "MongoDB", "Express", "Stripe Payments"],
+    features: ["Push Notifications", "Fan Engagement", "Stripe Payment Integration"]
   },
   {
     id: 4,
     name: "Spectrum",
-    logo: "🌈",
+    logo: "Spectrum",
     description: "Healthcare app for KSA with push notifications, doctor appointments, and dual-language support (Arabic/English). Not available on stores.",
     screens: ["Projects", "Tasks", "Team", "Timeline", "Reports"],
-    technologies: ["React Native", "Node.js", "MongoDB", "Express", "Push Notifications", "i18n"]
+    technologies: ["React Native", "Node.js", "MongoDB", "Express"],
+    features: ["Push Notifications", "Dual-language Support (Arabic/English)", "Video Consultation (ZegoCloud)", "Doctor Appointments"]
   },
 ];
 
@@ -49,7 +81,13 @@ const getAppLogo = (appName: string, logo: string) => {
     // SplitMart removed
   };
 
-  return logoMap[appName] || logo;
+  // Check if app has a custom image logo
+  if (logoMap[appName]) {
+    return logoMap[appName];
+  }
+
+  // Return the app name for icon rendering
+  return appName;
 };
 
 export default function Home() {
@@ -105,7 +143,7 @@ export default function Home() {
                     }}
                   >
                     <div className="text-center relative z-10">
-                      {getAppLogo(app.name, app.logo) !== app.logo ? (
+                      {getAppLogo(app.name, app.logo) !== app.name ? (
                         app.name === "Spectrum" ? (
                           <div style={{
                             width: 90, height: 90,
@@ -129,8 +167,8 @@ export default function Home() {
                           />
                         )
                       ) : (
-                        <div className="text-7xl drop-shadow-sm">
-                          {app.logo}
+                        <div className="flex justify-center items-center">
+                          <AppIcon name={app.name} />
                         </div>
                       )}
                     </div>
@@ -169,7 +207,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <div className="mb-8 floating">
                 <div className="inline-block p-6 rounded-2xl bg-gradient-to-br from-white/15 to-white/10 backdrop-blur-sm border border-white/20">
-                  {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.logo ? (
+                  {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.name ? (
                     selectedApp.name === "Spectrum" ? (
                       <div style={{ width: 140, height: 140, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
                         <Image
@@ -189,8 +227,8 @@ export default function Home() {
                       />
                     )
                   ) : (
-                    <div className="text-8xl drop-shadow-lg">
-                      {selectedApp.logo}
+                    <div className="flex justify-center items-center">
+                      <AppIcon name={selectedApp.name} />
                     </div>
                   )}
                 </div>
@@ -208,7 +246,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                    <span className="text-white text-lg">📱</span>
+                    <DevicePhoneMobileIcon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">
                     App Screens
@@ -231,11 +269,36 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Features */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center">
+                    <StarIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    Features
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {selectedApp.features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white hover:from-white/15 hover:to-white/10 transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mt-2 flex-shrink-0"></div>
+                        <span className="font-medium leading-relaxed">{feature}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Technologies */}
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                    <span className="text-white text-lg">⚙️</span>
+                    <CogIcon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">
                     Technologies
@@ -274,7 +337,9 @@ export default function Home() {
         <div className="relative z-10">
           <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
           <p className="text-lg font-medium">© 2024 Muhammad Saad - React Native Developer</p>
-          <p className="text-sm text-white/50 mt-2">Crafted with ❤️ using Next.js & React Native</p>
+          <p className="text-sm text-white/50 mt-2 flex items-center justify-center gap-1">
+            Crafted with <HeartIcon className="w-4 h-4 text-red-400" /> using Next.js & React Native
+          </p>
         </div>
       </footer>
     </div>
