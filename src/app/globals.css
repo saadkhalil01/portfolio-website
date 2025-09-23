@@ -72,11 +72,22 @@ body {
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* Fade-in appearance for balls */
+/* Modern animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -84,8 +95,47 @@ body {
   }
 }
 
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+  }
+}
+
 .fade-in {
-  animation: fadeInUp 500ms ease-out both;
+  animation: fadeInUp 600ms ease-out both;
+}
+
+.slide-in {
+  animation: slideInFromBottom 500ms ease-out both;
+}
+
+/* Improved glass morphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Roadway line animations */

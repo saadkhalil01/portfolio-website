@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from "next/image";
-
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 // Mock data for apps - you can replace these with actual app data later
 const apps = [
   {
@@ -58,190 +58,224 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-8">
       {/* Header */}
-      <header className="text-center mb-12 ">
-        <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 ">
-          SAAD KHALIL
-        </h1>
-        <p className="text-xl sm:text-2xl text-white/90 mb-2">
-          React Native Developer
-        </p>
-        <p className="text-lg text-white/80">
-          2+ Years Experience
-        </p>
+      <header className="text-center mb-16 relative">
+        <div className="mb-6">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight">
+            SAAD KHALIL
+          </h1>
+          <div className="h-1 w-24 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
+        </div>
+        <div className="space-y-3">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-white/95">
+            React Native Developer
+          </p>
+          <p className="text-lg sm:text-xl text-white/75 font-medium">
+            2+ Years Experience
+          </p>
+        </div>
       </header>
 
-      {/* Level Selection Grid */}
+      {/* Portfolio Grid */}
       {!selectedApp ? (
-        <main className="max-w-6xl mx-auto relative">
-
-
-
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              width: '100%',
-              alignSelf: "center",
-              gap: '60px'
-            }}
-            className="relative z-10">
+        <main className="max-w-7xl mx-auto relative px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 justify-items-center">
             {apps.map((app, index) => (
               <div
                 key={app.id}
-                className="flex flex-col items-center cursor-pointer transition-all duration-300 hover:scale-105 fade-in"
+                className="group flex flex-col items-center cursor-pointer fade-in"
                 onClick={() => setSelectedApp(app)}
                 style={{
-                  animationDelay: `${index * 0.2}s`
+                  animationDelay: `${index * 0.15}s`
                 }}
               >
-                <div
-                  className="level-card bg-purple-900/30 backdrop-blur-sm border border-purple-800/40 rounded-xl p-6 transition-all duration-300 hover:bg-purple-900/40 hover:shadow-2xl"
-                  style={{
-                    borderRadius: 1000,
-                    height: '150px',
-                    width: '150px',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    backgroundColor:
-                      (app.name === 'LoyalAI' || app.name === 'FanGenie')
-                        ? 'black'
-                        : 'white'
-                  }}
-                >
-                  <div className="text-center">
-                    {getAppLogo(app.name, app.logo) !== app.logo ? (
-                      app.name === "Spectrum" ? (
-                        <div style={{ width: 80, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                <div className="relative">
+                  <div
+                    className="level-card bg-gradient-to-br from-white/95 to-white/85 backdrop-blur-xl border border-white/30 rounded-3xl p-8 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-purple-500/25 group-hover:border-white/50"
+                    style={{
+                      height: '180px',
+                      width: '180px',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      backgroundColor:
+                        (app.name === 'LoyalAI' || app.name === 'FanGenie')
+                          ? 'rgba(0, 0, 0, 0.95)'
+                          : 'rgba(255, 255, 255, 0.95)'
+                    }}
+                  >
+                    <div className="text-center relative z-10">
+                      {getAppLogo(app.name, app.logo) !== app.logo ? (
+                        app.name === "Spectrum" ? (
+                          <div style={{
+                            width: 90, height: 90,
+                            display: 'flex', alignItems: 'center',
+                            justifyContent: 'center', position: 'relative'
+                          }}>
+                            <Image
+                              src={getAppLogo(app.name, app.logo)}
+                              alt={`${app.name} Logo`}
+                              fill
+                              style={{ objectFit: 'contain', objectPosition: 'center' }}
+                            />
+                          </div>
+                        ) : (
                           <Image
                             src={getAppLogo(app.name, app.logo)}
                             alt={`${app.name} Logo`}
-                            fill
-                            style={{ objectFit: 'contain', objectPosition: 'center' }}
+                            width={100}
+                            height={100}
+                            className="mx-auto drop-shadow-sm"
                           />
-                        </div>
+                        )
                       ) : (
-                        <Image
-                          src={getAppLogo(app.name, app.logo)}
-                          alt={`${app.name} Logo`}
-                          width={80}
-                          height={80}
-                          className="mx-auto"
-                        />
-                      )
-                    ) : (
-                      <div className="text-6xl">
-                        {app.logo}
-                      </div>
-                    )}
+                        <div className="text-7xl drop-shadow-sm">
+                          {app.logo}
+                        </div>
+                      )}
+                    </div>
                   </div>
+
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
                 </div>
-                <h3 className="text-white text-lg font-semibold mt-4 text-center max-w-[150px]">
-                  {app.name}
-                </h3>
+
+                <div className="mt-6 text-center">
+                  <h3 className="text-white text-xl font-bold tracking-wide group-hover:text-purple-200 transition-colors duration-300">
+                    {app.name}
+                  </h3>
+                  <div className="h-0.5 w-0 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mt-2 transition-all duration-300 group-hover:w-12 rounded-full"></div>
+                </div>
               </div>
             ))}
           </div>
         </main>
       ) : (
         /* App Detail Screen */
-        <main className="max-w-4xl mx-auto">
-          <div className="bg-purple-900/30 backdrop-blur-sm border border-purple-800/40 rounded-xl p-8">
+        <main className="max-w-5xl mx-auto px-3">
+          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-5 md:p-12 shadow-2xl">
             <button
               onClick={() => setSelectedApp(null)}
-              className="mb-6 text-white/80 hover:text-white transition-colors flex items-center gap-2 text-2xl"
-              aria-label="Back"
-              title="Back"
+              className="mb-8 text-white/70 hover:text-white transition-all duration-300 flex items-center gap-3 text-2xl group"
+              aria-label="Go back to portfolio"
+              title="Go back to portfolio"
             >
-              ←
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+                <ArrowLeftIcon className="w-6 h-6" />
+              </div>
+              <span className="font-medium">Back to Portfolio</span>
             </button>
 
-            <div className="text-center mb-8">
-              <div className="mb-4 floating">
-                {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.logo ? (
-                  selectedApp.name === "Spectrum" ? (
-                    <div style={{ width: 140, height: 140, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', margin: '0 auto' }}>
+            <div className="text-center mb-12">
+              <div className="mb-8 floating">
+                <div className="inline-block p-6 rounded-2xl bg-gradient-to-br from-white/15 to-white/10 backdrop-blur-sm border border-white/20">
+                  {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.logo ? (
+                    selectedApp.name === "Spectrum" ? (
+                      <div style={{ width: 140, height: 140, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                        <Image
+                          src={getAppLogo(selectedApp.name, selectedApp.logo)}
+                          alt={`${selectedApp.name} Logo`}
+                          fill
+                          style={{ objectFit: 'contain', objectPosition: 'center' }}
+                        />
+                      </div>
+                    ) : (
                       <Image
                         src={getAppLogo(selectedApp.name, selectedApp.logo)}
                         alt={`${selectedApp.name} Logo`}
-                        fill
-                        style={{ objectFit: 'contain', objectPosition: 'center' }}
+                        width={140}
+                        height={140}
+                        className="drop-shadow-lg"
                       />
-                    </div>
+                    )
                   ) : (
-                    <Image
-                      src={getAppLogo(selectedApp.name, selectedApp.logo)}
-                      alt={`${selectedApp.name} Logo`}
-                      width={120}
-                      height={120}
-                      className="mx-auto"
-                    />
-                  )
-                ) : (
-                  <div className="text-8xl">
-                    {selectedApp.logo}
-                  </div>
-                )}
+                    <div className="text-8xl drop-shadow-lg">
+                      {selectedApp.logo}
+                    </div>
+                  )}
+                </div>
               </div>
-              <h2 className="text-3xl font-bold text-white mb-2">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                 {selectedApp.name}
               </h2>
-              <p className="text-white/80 text-lg">
+              <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 {selectedApp.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               {/* App Screens */}
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  📱 App Screens
-                </h3>
-                <div className="space-y-2">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                    <span className="text-white text-lg">📱</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    App Screens
+                  </h3>
+                </div>
+                <div className="space-y-3">
                   {selectedApp.screens.map((screen, index) => (
                     <div
                       key={index}
-                      className="bg-purple-900/25 border border-purple-800/35 rounded-lg p-3 text-white"
+                      className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white hover:from-white/15 hover:to-white/10 transition-all duration-300"
                     >
-                      {index + 1}. {screen}
+                      <div className="flex items-center gap-3">
+                        <span className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center text-xs font-bold text-white">
+                          {index + 1}
+                        </span>
+                        <span className="font-medium">{screen}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Technologies */}
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  🛠️ Technologies Used
-                </h3>
-                <div className="space-y-2">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                    <span className="text-white text-lg">⚙️</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    Technologies
+                  </h3>
+                </div>
+                <div className="space-y-3">
                   {selectedApp.technologies.map((tech, index) => (
                     <div
                       key={index}
-                      className="bg-purple-950/40 border border-purple-900/50 rounded-lg p-3 text-white"
+                      className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white hover:from-white/15 hover:to-white/10 transition-all duration-300"
                     >
-                      {tech}
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mt-2 flex-shrink-0"></div>
+                        <span className="font-medium leading-relaxed">{tech}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 text-center">
-              <p className="text-white/60 text-sm">
-                More details and live demos coming soon...
-              </p>
+            <div className="mt-12 text-center">
+              <div className="inline-block p-4 rounded-2xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20">
+                <p className="text-white/70 text-sm font-medium">
+                  More details and live demos coming soon...
+                </p>
+              </div>
             </div>
           </div>
         </main>
       )}
 
       {/* Footer */}
-      <footer className="text-center mt-16 text-white/60">
-        <p>© 2024 Muhammad Saad - React Native Developer</p>
+      <footer className="text-center mt-20 text-white/60 relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div className="relative z-10">
+          <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg font-medium">© 2024 Muhammad Saad - React Native Developer</p>
+          <p className="text-sm text-white/50 mt-2">Crafted with ❤️ using Next.js & React Native</p>
+        </div>
       </footer>
     </div>
   );
