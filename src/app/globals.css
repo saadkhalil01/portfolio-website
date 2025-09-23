@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1e1b4b !important;
+  --foreground: #ffffff !important;
+  --primary-purple: #1e1b4b !important;
+  --level-card-bg: rgba(30, 27, 75, 0.15) !important;
+  --level-card-border: rgba(30, 27, 75, 0.4) !important;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-urbanist), var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #1e1b4b 0%,
+    #312e81 50%,
+    #4338ca 100%
+  ) !important;
+  color: var(--foreground) !important;
+  font-family: var(--font-urbanist), var(--font-geist-sans), Arial, Helvetica,
+    sans-serif !important;
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+}
+
+/* Game-like animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(30, 27, 75, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(30, 27, 75, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glowing {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.pulsing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Fade-in appearance for balls */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 500ms ease-out both;
+}
+
+/* Roadway line animations */
+@keyframes roadFlow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 250;
+  }
+}
+
+.roadway-line {
+  animation: roadFlow 2s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 27, 75, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 27, 75, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 27, 75, 0.7);
+}
+
+/* Force purple theme override */
+html,
+body {
+  background: linear-gradient(
+    135deg,
+    #1e1b4b 0%,
+    #312e81 50%,
+    #4338ca 100%
+  ) !important;
+}
+
+/* Override any blue backgrounds */
+.bg-blue-500,
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800,
+.bg-blue-900 {
+  background-color: #1e1b4b !important;
+}
+
+/* Ensure purple theme for all elements */
+* {
+  --tw-bg-opacity: 1;
+}
