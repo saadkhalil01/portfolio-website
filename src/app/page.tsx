@@ -11,7 +11,11 @@ import {
   CpuChipIcon,
   UserGroupIcon,
   SwatchIcon,
-  StarIcon
+  StarIcon,
+  EnvelopeIcon,
+  DocumentTextIcon,
+  ChevronDownIcon,
+  ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline';
 // Icon component for each app
 const AppIcon = ({ name }: { name: string }) => {
@@ -92,6 +96,7 @@ const getAppLogo = (appName: string, logo: string) => {
 
 export default function Home() {
   const [selectedApp, setSelectedApp] = useState<typeof apps[0] | null>(null);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div className="min-h-screen p-4 sm:p-8">
@@ -114,13 +119,77 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-[#f5f5dc]/75 font-medium">
             2+ Years Experience
           </p>
+          <div className="flex items-center gap-6 mt-6">
+            {/* Contact Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsContactOpen(!isContactOpen)}
+                className="flex items-center gap-2 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300"
+              >
+                <EnvelopeIcon className="w-6 h-6" />
+                <span className="text-lg font-medium">Contact</span>
+                <ChevronDownIcon className={`w-4 h-4 transition-transform duration-300 ${isContactOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {isContactOpen && (
+                <div className="absolute top-full left-0 mt-2 bg-black/90 backdrop-blur-xl border border-[#f5f5dc]/20 rounded-xl p-4 min-w-[280px] z-50">
+                  <div className="space-y-3">
+                    <a
+                      href="mailto:saadkhalil9999@gmail.com"
+                      className="flex items-center gap-3 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300 p-2 rounded-lg hover:bg-[#f5f5dc]/10"
+                    >
+                      <EnvelopeIcon className="w-5 h-5" />
+                      <div>
+                        <div className="font-medium">Email</div>
+                        <div className="text-sm text-[#f5f5dc]/70">saadkhalil9999@gmail.com</div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="https://wa.me/923229953346"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300 p-2 rounded-lg hover:bg-[#f5f5dc]/10"
+                    >
+                      <ChatBubbleLeftRightIcon className="w-5 h-5" />
+                      <div>
+                        <div className="font-medium">WhatsApp</div>
+                        <div className="text-sm text-[#f5f5dc]/70">+92 322 9953346</div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="tel:+923229953346"
+                      className="flex items-center gap-3 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300 p-2 rounded-lg hover:bg-[#f5f5dc]/10"
+                    >
+                      <DevicePhoneMobileIcon className="w-5 h-5" />
+                      <div>
+                        <div className="font-medium">Call</div>
+                        <div className="text-sm text-[#f5f5dc]/70">+92 322 9953346</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="/saadKhalil.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300"
+            >
+              <DocumentTextIcon className="w-6 h-6" />
+              <span className="text-lg font-medium">Resume</span>
+            </a>
+          </div>
         </div>
       </header>
 
       {/* Portfolio Grid */}
       {!selectedApp ? (
-        <main className="max-w-7xl mx-auto relative px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 justify-items-center">
+        <main className="max-w-6xl mx-auto relative px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-8 justify-items-center items-start">
             {apps.map((app, index) => (
               <div
                 key={app.id}
@@ -132,10 +201,10 @@ export default function Home() {
               >
                 <div className="relative">
                   <div
-                    className="level-card bg-gradient-to-br from-[#f5f5dc]/95 to-[#f5f5dc]/85 backdrop-blur-xl border border-[#f5f5dc]/30 rounded-3xl p-8 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#f5f5dc]/25 group-hover:border-[#f5f5dc]/50"
+                    className="level-card bg-gradient-to-br from-[#f5f5dc]/95 to-[#f5f5dc]/85 backdrop-blur-xl border border-[#f5f5dc]/30 rounded-3xl p-6 transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#f5f5dc]/25 group-hover:border-[#f5f5dc]/50"
                     style={{
-                      height: '180px',
-                      width: '180px',
+                      height: '200px',
+                      width: '200px',
                       alignItems: 'center',
                       justifyContent: 'center',
                       display: 'flex',
@@ -182,11 +251,11 @@ export default function Home() {
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f5f5dc]/20 to-[#d4af37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
                 </div>
 
-                <div className="mt-6 text-center">
+                <div className="mt-8 text-center">
                   <h3 className="text-[#f5f5dc] text-xl font-bold tracking-wide group-hover:text-[#d4af37] transition-colors duration-300">
                     {app.name}
                   </h3>
-                  <div className="h-0.5 w-0 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto mt-2 transition-all duration-300 group-hover:w-12 rounded-full"></div>
+                  <div className="h-0.5 w-0 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto mt-3 transition-all duration-300 group-hover:w-16 rounded-full"></div>
                 </div>
               </div>
             ))}
@@ -246,33 +315,6 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* App Screens */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f5f5dc] to-[#d4af37] flex items-center justify-center">
-                    <DevicePhoneMobileIcon className="w-6 h-6 text-black" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#f5f5dc]">
-                    App Screens
-                  </h3>
-                </div>
-                <div className="space-y-3">
-                  {selectedApp.screens.map((screen, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-r from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-sm border border-[#f5f5dc]/20 rounded-xl p-4 text-[#f5f5dc] hover:from-[#f5f5dc]/15 hover:to-[#f5f5dc]/10 transition-all duration-300"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] flex items-center justify-center text-xs font-bold text-black">
-                          {index + 1}
-                        </span>
-                        <span className="font-medium">{screen}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Features */}
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
