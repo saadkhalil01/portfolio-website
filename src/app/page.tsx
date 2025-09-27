@@ -98,19 +98,14 @@ export default function Home() {
       {/* Header */}
       <header className="text-left mb-16 relative">
         <div className="mb-6">
-          <div className="flex flex-col">
-            <div className="inline-block">
-              <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-black bg-[#f5f5dc] px-6 py-2 tracking-tight">
-                SAAD
-              </span>
-            </div>
-            <div className="inline-block mt-2">
-              <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-[#f5f5dc] bg-black px-6 py-2 tracking-tight">
-                KHALIL
-              </span>
-            </div>
+          <div className="flex items-center">
+            <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-black bg-[#f5f5dc] px-6 py-2 tracking-tight">
+              SAAD
+            </span>
+            <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-[#f5f5dc] bg-black px-6 py-2 tracking-tight">
+              KHALIL
+            </span>
           </div>
-          <div className="h-1 w-24 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mt-6 rounded-full"></div>
         </div>
         <div className="space-y-3">
           <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#f5f5dc]">
@@ -342,7 +337,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="text-center mt-20 text-[#f5f5dc]/60">
-        <div className="w-16 h-1 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto rounded-full mb-6"></div>
+        {/* <div className="w-16 h-1 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto rounded-full mb-6"></div> */}
         <p className="text-lg font-medium">© 2024 Muhammad Saad - React Native Developer</p>
       </footer>
     </div>
