@@ -96,18 +96,27 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-8">
       {/* Header */}
-      <header className="text-center mb-16 relative">
+      <header className="text-left mb-16 relative">
         <div className="mb-6">
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight">
-            SAAD KHALIL
-          </h1>
-          <div className="h-1 w-24 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
+          <div className="flex flex-col">
+            <div className="inline-block">
+              <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-black bg-[#f5f5dc] px-6 py-2 tracking-tight">
+                SAAD
+              </span>
+            </div>
+            <div className="inline-block mt-2">
+              <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-[#f5f5dc] bg-black px-6 py-2 tracking-tight">
+                KHALIL
+              </span>
+            </div>
+          </div>
+          <div className="h-1 w-24 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mt-6 rounded-full"></div>
         </div>
         <div className="space-y-3">
-          <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-white/95">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#f5f5dc]">
             React Native Developer
           </p>
-          <p className="text-lg sm:text-xl text-white/75 font-medium">
+          <p className="text-lg sm:text-xl text-[#f5f5dc]/75 font-medium">
             2+ Years Experience
           </p>
         </div>
@@ -128,7 +137,7 @@ export default function Home() {
               >
                 <div className="relative">
                   <div
-                    className="level-card bg-gradient-to-br from-white/95 to-white/85 backdrop-blur-xl border border-white/30 rounded-3xl p-8 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-purple-500/25 group-hover:border-white/50"
+                    className="level-card bg-gradient-to-br from-[#f5f5dc]/95 to-[#f5f5dc]/85 backdrop-blur-xl border border-[#f5f5dc]/30 rounded-3xl p-8 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#f5f5dc]/25 group-hover:border-[#f5f5dc]/50"
                     style={{
                       height: '180px',
                       width: '180px',
@@ -139,7 +148,7 @@ export default function Home() {
                       backgroundColor:
                         (app.name === 'LoyalAI' || app.name === 'FanGenie')
                           ? 'rgba(0, 0, 0, 0.95)'
-                          : 'rgba(255, 255, 255, 0.95)'
+                          : 'rgba(245, 245, 220, 0.95)'
                     }}
                   >
                     <div className="text-center relative z-10">
@@ -175,14 +184,14 @@ export default function Home() {
                   </div>
 
                   {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f5f5dc]/20 to-[#d4af37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
                 </div>
 
                 <div className="mt-6 text-center">
-                  <h3 className="text-white text-xl font-bold tracking-wide group-hover:text-purple-200 transition-colors duration-300">
+                  <h3 className="text-[#f5f5dc] text-xl font-bold tracking-wide group-hover:text-[#d4af37] transition-colors duration-300">
                     {app.name}
                   </h3>
-                  <div className="h-0.5 w-0 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mt-2 transition-all duration-300 group-hover:w-12 rounded-full"></div>
+                  <div className="h-0.5 w-0 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto mt-2 transition-all duration-300 group-hover:w-12 rounded-full"></div>
                 </div>
               </div>
             ))}
@@ -191,14 +200,14 @@ export default function Home() {
       ) : (
         /* App Detail Screen */
         <main className="max-w-5xl mx-auto px-3">
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-5 md:p-12 shadow-2xl">
+          <div className="bg-gradient-to-br from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-xl border border-[#f5f5dc]/20 rounded-3xl p-5 md:p-12 shadow-2xl">
             <button
               onClick={() => setSelectedApp(null)}
-              className="mb-8 text-white/70 hover:text-white transition-all duration-300 flex items-center gap-3 text-2xl group"
+              className="mb-8 text-[#f5f5dc]/70 hover:text-[#f5f5dc] transition-all duration-300 flex items-center gap-3 text-2xl group"
               aria-label="Go back to portfolio"
               title="Go back to portfolio"
             >
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+              <div className="w-10 h-10 rounded-full bg-[#f5f5dc]/10 flex items-center justify-center group-hover:bg-[#f5f5dc]/20 transition-colors duration-300">
                 <ArrowLeftIcon className="w-6 h-6" />
               </div>
               <span className="font-medium">Back to Portfolio</span>
@@ -206,7 +215,7 @@ export default function Home() {
 
             <div className="text-center mb-12">
               <div className="mb-8 floating">
-                <div className="inline-block p-6 rounded-2xl bg-gradient-to-br from-white/15 to-white/10 backdrop-blur-sm border border-white/20">
+                <div className="inline-block p-6 rounded-2xl bg-gradient-to-br from-[#f5f5dc]/15 to-[#f5f5dc]/10 backdrop-blur-sm border border-[#f5f5dc]/20">
                   {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.name ? (
                     selectedApp.name === "Spectrum" ? (
                       <div style={{ width: 140, height: 140, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
@@ -233,10 +242,10 @@ export default function Home() {
                   )}
                 </div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#f5f5dc] mb-6 tracking-tight">
                 {selectedApp.name}
               </h2>
-              <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+              <p className="text-[#f5f5dc]/85 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 {selectedApp.description}
               </p>
             </div>
@@ -245,10 +254,10 @@ export default function Home() {
               {/* App Screens */}
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                    <DevicePhoneMobileIcon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f5f5dc] to-[#d4af37] flex items-center justify-center">
+                    <DevicePhoneMobileIcon className="w-6 h-6 text-black" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-[#f5f5dc]">
                     App Screens
                   </h3>
                 </div>
@@ -256,10 +265,10 @@ export default function Home() {
                   {selectedApp.screens.map((screen, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white hover:from-white/15 hover:to-white/10 transition-all duration-300"
+                      className="bg-gradient-to-r from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-sm border border-[#f5f5dc]/20 rounded-xl p-4 text-[#f5f5dc] hover:from-[#f5f5dc]/15 hover:to-[#f5f5dc]/10 transition-all duration-300"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center text-xs font-bold text-white">
+                        <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] flex items-center justify-center text-xs font-bold text-black">
                           {index + 1}
                         </span>
                         <span className="font-medium">{screen}</span>
@@ -272,10 +281,10 @@ export default function Home() {
               {/* Features */}
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center">
-                    <StarIcon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f5f5dc] to-[#d4af37] flex items-center justify-center">
+                    <StarIcon className="w-6 h-6 text-black" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-[#f5f5dc]">
                     Features
                   </h3>
                 </div>
@@ -283,10 +292,10 @@ export default function Home() {
                   {selectedApp.features.map((feature, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white hover:from-white/15 hover:to-white/10 transition-all duration-300"
+                      className="bg-gradient-to-r from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-sm border border-[#f5f5dc]/20 rounded-xl p-4 text-[#f5f5dc] hover:from-[#f5f5dc]/15 hover:to-[#f5f5dc]/10 transition-all duration-300"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mt-2 flex-shrink-0"></div>
                         <span className="font-medium leading-relaxed">{feature}</span>
                       </div>
                     </div>
@@ -297,10 +306,10 @@ export default function Home() {
               {/* Technologies */}
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                    <CogIcon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f5f5dc] to-[#d4af37] flex items-center justify-center">
+                    <CogIcon className="w-6 h-6 text-black" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-[#f5f5dc]">
                     Technologies
                   </h3>
                 </div>
@@ -308,10 +317,10 @@ export default function Home() {
                   {selectedApp.technologies.map((tech, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white hover:from-white/15 hover:to-white/10 transition-all duration-300"
+                      className="bg-gradient-to-r from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-sm border border-[#f5f5dc]/20 rounded-xl p-4 text-[#f5f5dc] hover:from-[#f5f5dc]/15 hover:to-[#f5f5dc]/10 transition-all duration-300"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mt-2 flex-shrink-0"></div>
                         <span className="font-medium leading-relaxed">{tech}</span>
                       </div>
                     </div>
@@ -321,8 +330,8 @@ export default function Home() {
             </div>
 
             <div className="mt-12 text-center">
-              <div className="inline-block p-4 rounded-2xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20">
-                <p className="text-white/70 text-sm font-medium">
+              <div className="inline-block p-4 rounded-2xl bg-gradient-to-r from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-sm border border-[#f5f5dc]/20">
+                <p className="text-[#f5f5dc]/70 text-sm font-medium">
                   More details and live demos coming soon...
                 </p>
               </div>
@@ -332,15 +341,9 @@ export default function Home() {
       )}
 
       {/* Footer */}
-      <footer className="text-center mt-20 text-white/60 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-        <div className="relative z-10">
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg font-medium">© 2024 Muhammad Saad - React Native Developer</p>
-          <p className="text-sm text-white/50 mt-2 flex items-center justify-center gap-1">
-            Crafted with <HeartIcon className="w-4 h-4 text-red-400" /> using Next.js & React Native
-          </p>
-        </div>
+      <footer className="text-center mt-20 text-[#f5f5dc]/60">
+        <div className="w-16 h-1 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto rounded-full mb-6"></div>
+        <p className="text-lg font-medium">© 2024 Muhammad Saad - React Native Developer</p>
       </footer>
     </div>
   );

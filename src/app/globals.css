@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1e1b4b !important;
-  --foreground: #ffffff !important;
-  --primary-purple: #1e1b4b !important;
-  --level-card-bg: rgba(30, 27, 75, 0.15) !important;
-  --level-card-border: rgba(30, 27, 75, 0.4) !important;
+  --background: #000000 !important;
+  --foreground: #f5f5dc !important;
+  --primary-sand: #f5f5dc !important;
+  --level-card-bg: rgba(245, 245, 220, 0.1) !important;
+  --level-card-border: rgba(245, 245, 220, 0.3) !important;
 }
 
 @theme inline {
@@ -18,9 +18,9 @@
 body {
   background: linear-gradient(
     135deg,
-    #1e1b4b 0%,
-    #312e81 50%,
-    #4338ca 100%
+    #000000 0%,
+    #1a1a1a 50%,
+    #2a2a2a 100%
   ) !important;
   color: var(--foreground) !important;
   font-family: var(--font-urbanist), var(--font-geist-sans), Arial, Helvetica,
@@ -43,10 +43,10 @@ body {
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(30, 27, 75, 0.6);
+    box-shadow: 0 0 20px rgba(245, 245, 220, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(30, 27, 75, 0.8);
+    box-shadow: 0 0 30px rgba(245, 245, 220, 0.5);
   }
 }
 
@@ -98,10 +98,10 @@ body {
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 20px rgba(245, 245, 220, 0.2);
   }
   50% {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 40px rgba(245, 245, 220, 0.4);
   }
 }
 
@@ -132,7 +132,7 @@ body {
 
 /* Gradient text effect */
 .gradient-text {
-  background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4);
+  background: linear-gradient(135deg, #f5f5dc, #d4af37, #b8860b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -158,26 +158,26 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(30, 27, 75, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(30, 27, 75, 0.5);
+  background: rgba(245, 245, 220, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(30, 27, 75, 0.7);
+  background: rgba(245, 245, 220, 0.5);
 }
 
-/* Force purple theme override */
+/* Force black theme override */
 html,
 body {
   background: linear-gradient(
     135deg,
-    #1e1b4b 0%,
-    #312e81 50%,
-    #4338ca 100%
+    #000000 0%,
+    #1a1a1a 50%,
+    #2a2a2a 100%
   ) !important;
 }
 
@@ -187,10 +187,10 @@ body {
 .bg-blue-700,
 .bg-blue-800,
 .bg-blue-900 {
-  background-color: #1e1b4b !important;
+  background-color: #000000 !important;
 }
 
-/* Ensure purple theme for all elements */
+/* Ensure black theme for all elements */
 * {
   --tw-bg-opacity: 1;
 }
