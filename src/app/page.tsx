@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from "next/image";
 import {
   ArrowLeftIcon,
@@ -97,6 +97,41 @@ const getAppLogo = (appName: string, logo: string) => {
 export default function Home() {
   const [selectedApp, setSelectedApp] = useState<typeof apps[0] | null>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
+
+  // Ensure the browser/device back button closes the details view instead of leaving the site/app
+  useEffect(() => {
+    const onPopState = () => {
+      // Close any open UI like contact dropdown
+      setIsContactOpen(false);
+      // If a details view is open, close it when user presses back
+      setSelectedApp(prev => (prev ? null : prev));
+    };
+
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  // When opening a details view, push a history state so back returns to the grid
+  useEffect(() => {
+    if (selectedApp) {
+      try {
+        const hash = `#${encodeURIComponent(selectedApp.name)}`;
+        const url = hash;
+        window.history.pushState({ app: selectedApp.name }, '', url);
+      } catch { }
+    }
+  }, [selectedApp]);
+
+  const handleBackFromDetails = () => {
+    // If we previously pushed a state, go back so popstate closes details.
+    // Otherwise, just close the details without navigating away.
+    // This prevents exiting the app/site on Android back.
+    if (typeof window !== 'undefined' && window.history.state && (window.history.state as any).app) {
+      window.history.back();
+    } else {
+      setSelectedApp(null);
+    }
+  };
 
   return (
     <div className="min-h-screen p-4 sm:p-8">
@@ -294,7 +329,7 @@ export default function Home() {
         <main className="max-w-5xl mx-auto px-3">
           <div className="bg-gradient-to-br from-[#f5f5dc]/10 to-[#f5f5dc]/5 backdrop-blur-xl border border-[#f5f5dc]/20 rounded-3xl p-5 md:p-12 shadow-2xl">
             <button
-              onClick={() => setSelectedApp(null)}
+              onClick={handleBackFromDetails}
               className="mb-8 text-[#f5f5dc]/70 hover:text-[#f5f5dc] transition-all duration-300 flex items-center gap-3 text-2xl group"
               aria-label="Go back to portfolio"
               title="Go back to portfolio"
