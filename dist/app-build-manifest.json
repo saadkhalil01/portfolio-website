@@ -1,27 +1,12 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/c6f33_next_dist_3f6a7e9b._.js",
-      "static/chunks/portfolio-website_src_app_favicon_ico_mjs_3a86a800._.js",
-      "static/chunks/[root-of-the-server]__14e9c8a3._.css",
-      "static/chunks/portfolio-website_src_app_layout_tsx_f6160a2c._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_c8d789eb._.js",
-      "static/chunks/c6f33_next_dist_compiled_react-dom_0781b2d8._.js",
-      "static/chunks/c6f33_next_dist_compiled_next-devtools_index_cec93995.js",
-      "static/chunks/c6f33_next_dist_compiled_7f4997c1._.js",
-      "static/chunks/c6f33_next_dist_client_e6a61f36._.js",
-      "static/chunks/c6f33_next_dist_fcf102a7._.js",
-      "static/chunks/c6f33_@swc_helpers_cjs_4ac9277a._.js",
-      "static/chunks/portfolio-website_a0ff3932._.js",
-      "static/chunks/turbopack-portfolio-website_94551fc0._.js"
-    ],
     "/page": [
       "static/chunks/c6f33_next_dist_3f6a7e9b._.js",
       "static/chunks/portfolio-website_src_app_favicon_ico_mjs_3a86a800._.js",
       "static/chunks/[root-of-the-server]__14e9c8a3._.css",
       "static/chunks/portfolio-website_src_app_layout_tsx_f6160a2c._.js",
       "static/chunks/c6f33_next_dist_client_components_builtin_global-error_8c185659.js",
-      "static/chunks/c6f33_0f20cc74._.js",
+      "static/chunks/c6f33_5c83bc78._.js",
       "static/chunks/portfolio-website_src_app_page_tsx_7c333b16._.js",
       "static/chunks/portfolio-website_src_app_page_tsx_8c185659._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_c8d789eb._.js",

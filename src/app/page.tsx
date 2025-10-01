@@ -145,6 +145,8 @@ export default function Home() {
                       </div>
                     </a>
 
+
+
                     <a
                       href="https://wa.me/923229953346"
                       target="_blank"
@@ -181,6 +183,32 @@ export default function Home() {
             >
               <DocumentTextIcon className="w-6 h-6" />
               <span className="text-lg font-medium">Resume</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/saad-khalil-0912b2232/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex items-center gap-2 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                <path d="M4.983 3.5C4.983 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.483 1.12 2.483 2.5zM.24 8.25h4.52V23H.24V8.25zM8.339 8.25h4.334v2.01h.061c.604-1.146 2.08-2.353 4.285-2.353 4.584 0 5.428 3.016 5.428 6.938V23h-4.72v-6.518c0-1.556-.028-3.557-2.17-3.557-2.173 0-2.506 1.698-2.506 3.448V23H8.339V8.25z" />
+              </svg>
+              <span className="text-lg font-medium hidden sm:inline">LinkedIn</span>
+            </a>
+
+            <a
+              href="https://github.com/saadkhalil01"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="flex items-center gap-2 text-[#f5f5dc] hover:text-[#d4af37] transition-colors duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.343-3.369-1.343-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.22-.253-4.555-1.112-4.555-4.946 0-1.092.39-1.987 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.851.004 1.706.115 2.504.337 1.909-1.295 2.748-1.026 2.748-1.026.546 1.378.203 2.397.1 2.65.64.701 1.028 1.596 1.028 2.688 0 3.842-2.339 4.69-4.566 4.938.359.309.679.918.679 1.852 0 1.337-.012 2.415-.012 2.742 0 .267.18.579.688.48A10.019 10.019 0 0 0 22 12.017C22 6.484 17.523 2 12 2z" clipRule="evenodd" />
+              </svg>
+              <span className="text-lg font-medium hidden sm:inline">GitHub</span>
             </a>
           </div>
         </div>
