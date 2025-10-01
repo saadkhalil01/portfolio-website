@@ -44,7 +44,11 @@ const apps = [
     description: "Mental wellness app with real-time push/in-app notifications and an AI chatbot for mental health. Available on App Store and Play Store.",
     screens: ["Home", "Ideas", "Brainstorm", "Projects", "Profile"],
     technologies: ["React Native", "Node.js", "MongoDB", "Express", "AI Chatbot"],
-    features: ["Real-time Push Notifications", "In-app Notifications", "AI Mental Health Chatbot"]
+    features: ["Real-time Push Notifications", "In-app Notifications", "AI Mental Health Chatbot"],
+    links: {
+      appstore: "https://apps.apple.com/pk/app/myndspark/id6739531918",
+      playstore: "https://play.google.com/store/apps/details?id=com.myndspark"
+    }
   },
   {
     id: 2,
@@ -53,7 +57,10 @@ const apps = [
     description: "Relationship-focused loyalty assistant with real-time push/in-app notifications and an AI chatbot for relationships. Available on App Store.",
     screens: ["Dashboard", "Rewards", "Analytics", "Campaigns", "Settings"],
     technologies: ["React Native", "Node.js", "MongoDB", "Express", "AI Chatbot"],
-    features: ["Real-time Push Notifications", "In-app Notifications", "Relationship AI Assistant"]
+    features: ["Real-time Push Notifications", "In-app Notifications", "Relationship AI Assistant"],
+    links: {
+      appstore: "https://apps.apple.com/pk/app/loyalai-modern-love-tracker/id6747716993"
+    }
   },
   {
     id: 3,
@@ -62,7 +69,10 @@ const apps = [
     description: "Fan engagement platform with push notifications and Stripe Payment Sheet integration. Available on App Store.",
     screens: ["Feed", "Create", "Fans", "Analytics", "Monetize"],
     technologies: ["React Native", "Node.js", "MongoDB", "Express", "Stripe Payments"],
-    features: ["Push Notifications", "Fan Engagement", "Stripe Payment Integration"]
+    features: ["Push Notifications", "Fan Engagement", "Stripe Payment Integration"],
+    links: {
+      appstore: "https://apps.apple.com/pk/app/fangenie/id6751832502"
+    }
   },
   {
     id: 4,
@@ -252,14 +262,15 @@ export default function Home() {
       {/* Portfolio Grid */}
       {!selectedApp ? (
         <main className="max-w-6xl mx-auto relative px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-8 justify-items-center items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-8 justify-items-center items-center">
             {apps.map((app, index) => (
               <div
                 key={app.id}
                 className="group flex flex-col items-center cursor-pointer fade-in"
                 onClick={() => setSelectedApp(app)}
                 style={{
-                  animationDelay: `${index * 0.15}s`
+                  animationDelay: `${index * 0.15}s`,
+                  justifySelf: 'center',
                 }}
               >
                 <div className="relative">
@@ -375,6 +386,34 @@ export default function Home() {
               <p className="text-[#f5f5dc]/85 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 {selectedApp.description}
               </p>
+              {selectedApp && (selectedApp as any).links && (
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                  {(selectedApp as any).links.appstore && (
+                    <a
+                      href={(selectedApp as any).links.appstore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-3 px-4 py-2 rounded-xl border border-[#f5f5dc]/30 bg-black/40 text-[#f5f5dc] hover:border-[#f5f5dc]/60 hover:bg-black/60 transition-colors"
+                      aria-label={`${selectedApp.name} on the App Store`}
+                    >
+                      <Image src="/appstore.png" alt="Download on the App Store" width={20} height={20} className="w-5 h-5" />
+                      <span className="text-sm font-medium">App Store</span>
+                    </a>
+                  )}
+                  {(selectedApp as any).links.playstore && (
+                    <a
+                      href={(selectedApp as any).links.playstore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-3 px-4 py-2 rounded-xl border border-[#f5f5dc]/30 bg-black/40 text-[#f5f5dc] hover:border-[#f5f5dc]/60 hover:bg-black/60 transition-colors"
+                      aria-label={`${selectedApp.name} on Google Play`}
+                    >
+                      <Image src="/playstore.png" alt="Get it on Google Play" width={20} height={20} className="w-5 h-5" />
+                      <span className="text-sm font-medium">Google Play</span>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

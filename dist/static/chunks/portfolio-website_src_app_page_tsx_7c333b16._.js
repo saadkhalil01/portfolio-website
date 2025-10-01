@@ -102,7 +102,11 @@ const apps = [
             "Real-time Push Notifications",
             "In-app Notifications",
             "AI Mental Health Chatbot"
-        ]
+        ],
+        links: {
+            appstore: "https://apps.apple.com/pk/app/myndspark/id6739531918",
+            playstore: "https://play.google.com/store/apps/details?id=com.myndspark"
+        }
     },
     {
         id: 2,
@@ -127,7 +131,10 @@ const apps = [
             "Real-time Push Notifications",
             "In-app Notifications",
             "Relationship AI Assistant"
-        ]
+        ],
+        links: {
+            appstore: "https://apps.apple.com/pk/app/loyalai-modern-love-tracker/id6747716993"
+        }
     },
     {
         id: 3,
@@ -152,7 +159,10 @@ const apps = [
             "Push Notifications",
             "Fan Engagement",
             "Stripe Payment Integration"
-        ]
+        ],
+        links: {
+            appstore: "https://apps.apple.com/pk/app/fangenie/id6751832502"
+        }
     },
     {
         id: 4,
@@ -260,7 +270,7 @@ function Home() {
                                     children: "SAAD"
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 152,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -268,18 +278,18 @@ function Home() {
                                     children: "KHALIL"
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 145,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                            lineNumber: 141,
+                            lineNumber: 151,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                        lineNumber: 140,
+                        lineNumber: 150,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -290,7 +300,7 @@ function Home() {
                                 children: "React Native Developer"
                             }, void 0, false, {
                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                lineNumber: 151,
+                                lineNumber: 161,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -298,7 +308,7 @@ function Home() {
                                 children: "2+ Years Experience"
                             }, void 0, false, {
                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                lineNumber: 154,
+                                lineNumber: 164,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -315,7 +325,7 @@ function Home() {
                                                         className: "w-6 h-6"
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 164,
+                                                        lineNumber: 174,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -323,20 +333,20 @@ function Home() {
                                                         children: "Contact"
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 165,
+                                                        lineNumber: 175,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f40$heroicons$2f$react$2f$24$2f$outline$2f$esm$2f$ChevronDownIcon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDownIcon$3e$__["ChevronDownIcon"], {
                                                         className: "w-4 h-4 transition-transform duration-300 ".concat(isContactOpen ? 'rotate-180' : '')
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 176,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 160,
+                                                lineNumber: 170,
                                                 columnNumber: 15
                                             }, this),
                                             isContactOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -352,7 +362,7 @@ function Home() {
                                                                     className: "w-5 h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                    lineNumber: 176,
+                                                                    lineNumber: 186,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -362,7 +372,7 @@ function Home() {
                                                                             children: "Email"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                            lineNumber: 178,
+                                                                            lineNumber: 188,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -370,19 +380,19 @@ function Home() {
                                                                             children: "saadkhalil9999@gmail.com"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                            lineNumber: 179,
+                                                                            lineNumber: 189,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                    lineNumber: 177,
+                                                                    lineNumber: 187,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                            lineNumber: 172,
+                                                            lineNumber: 182,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -395,7 +405,7 @@ function Home() {
                                                                     className: "w-5 h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                    lineNumber: 191,
+                                                                    lineNumber: 201,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -405,7 +415,7 @@ function Home() {
                                                                             children: "WhatsApp"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                            lineNumber: 193,
+                                                                            lineNumber: 203,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -413,19 +423,19 @@ function Home() {
                                                                             children: "+92 322 9953346"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                            lineNumber: 194,
+                                                                            lineNumber: 204,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                    lineNumber: 192,
+                                                                    lineNumber: 202,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                            lineNumber: 185,
+                                                            lineNumber: 195,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -436,7 +446,7 @@ function Home() {
                                                                     className: "w-5 h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                    lineNumber: 202,
+                                                                    lineNumber: 212,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -446,7 +456,7 @@ function Home() {
                                                                             children: "Call"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                            lineNumber: 204,
+                                                                            lineNumber: 214,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -454,36 +464,36 @@ function Home() {
                                                                             children: "+92 322 9953346"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                            lineNumber: 205,
+                                                                            lineNumber: 215,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                    lineNumber: 203,
+                                                                    lineNumber: 213,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                            lineNumber: 198,
+                                                            lineNumber: 208,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 171,
+                                                    lineNumber: 181,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 180,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 169,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -496,7 +506,7 @@ function Home() {
                                                 className: "w-6 h-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 219,
+                                                lineNumber: 229,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -504,13 +514,13 @@ function Home() {
                                                 children: "Resume"
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 220,
+                                                lineNumber: 230,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 223,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -529,12 +539,12 @@ function Home() {
                                                     d: "M4.983 3.5C4.983 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.483 1.12 2.483 2.5zM.24 8.25h4.52V23H.24V8.25zM8.339 8.25h4.334v2.01h.061c.604-1.146 2.08-2.353 4.285-2.353 4.584 0 5.428 3.016 5.428 6.938V23h-4.72v-6.518c0-1.556-.028-3.557-2.17-3.557-2.173 0-2.506 1.698-2.506 3.448V23H8.339V8.25z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 231,
+                                                    lineNumber: 241,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 230,
+                                                lineNumber: 240,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -542,13 +552,13 @@ function Home() {
                                                 children: "LinkedIn"
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 233,
+                                                lineNumber: 243,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                        lineNumber: 223,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -569,12 +579,12 @@ function Home() {
                                                     clipRule: "evenodd"
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 244,
+                                                    lineNumber: 254,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 243,
+                                                lineNumber: 253,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -582,42 +592,43 @@ function Home() {
                                                 children: "GitHub"
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 246,
+                                                lineNumber: 256,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                        lineNumber: 236,
+                                        lineNumber: 246,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                lineNumber: 157,
+                                lineNumber: 167,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                        lineNumber: 150,
+                        lineNumber: 160,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                lineNumber: 139,
+                lineNumber: 149,
                 columnNumber: 7
             }, this),
             !selectedApp ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "max-w-6xl mx-auto relative px-4",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-8 justify-items-center items-start",
+                    className: "grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10 xl:gap-8 justify-items-center items-center",
                     children: apps.map((app, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "group flex flex-col items-center cursor-pointer fade-in",
                             onClick: ()=>setSelectedApp(app),
                             style: {
-                                animationDelay: "".concat(index * 0.15, "s")
+                                animationDelay: "".concat(index * 0.15, "s"),
+                                justifySelf: 'center'
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -655,12 +666,12 @@ function Home() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 300,
                                                         columnNumber: 29
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 284,
+                                                    lineNumber: 295,
                                                     columnNumber: 27
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     src: getAppLogo(app.name, app.logo),
@@ -670,7 +681,7 @@ function Home() {
                                                     className: "mx-auto drop-shadow-sm"
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 297,
+                                                    lineNumber: 308,
                                                     columnNumber: 27
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "flex justify-center items-center",
@@ -678,35 +689,35 @@ function Home() {
                                                         name: app.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 307,
+                                                        lineNumber: 318,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 306,
+                                                    lineNumber: 317,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 281,
+                                                lineNumber: 292,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 277,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f5f5dc]/20 to-[#d4af37]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 314,
+                                            lineNumber: 325,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 265,
+                                    lineNumber: 276,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -717,36 +728,36 @@ function Home() {
                                             children: app.name
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 318,
+                                            lineNumber: 329,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "h-0.5 w-0 bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mx-auto mt-3 transition-all duration-300 group-hover:w-16 rounded-full"
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 321,
+                                            lineNumber: 332,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 317,
+                                    lineNumber: 328,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, app.id, true, {
                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                            lineNumber: 257,
+                            lineNumber: 267,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                    lineNumber: 255,
+                    lineNumber: 265,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                lineNumber: 254,
+                lineNumber: 264,
                 columnNumber: 9
             }, this) : /* App Detail Screen */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "max-w-5xl mx-auto px-3",
@@ -765,12 +776,12 @@ function Home() {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                        lineNumber: 338,
+                                        lineNumber: 349,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 337,
+                                    lineNumber: 348,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -778,13 +789,13 @@ function Home() {
                                     children: "Back to Portfolio"
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 340,
+                                    lineNumber: 351,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                            lineNumber: 331,
+                            lineNumber: 342,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -813,12 +824,12 @@ function Home() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 349,
+                                                lineNumber: 360,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 348,
+                                            lineNumber: 359,
                                             columnNumber: 23
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             src: getAppLogo(selectedApp.name, selectedApp.logo),
@@ -828,7 +839,7 @@ function Home() {
                                             className: "drop-shadow-lg"
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 357,
+                                            lineNumber: 368,
                                             columnNumber: 23
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex justify-center items-center",
@@ -836,22 +847,22 @@ function Home() {
                                                 name: selectedApp.name
                                             }, void 0, false, {
                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                lineNumber: 367,
+                                                lineNumber: 378,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 366,
+                                            lineNumber: 377,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                        lineNumber: 345,
+                                        lineNumber: 356,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 344,
+                                    lineNumber: 355,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -859,7 +870,7 @@ function Home() {
                                     children: selectedApp.name
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 372,
+                                    lineNumber: 383,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -867,13 +878,86 @@ function Home() {
                                     children: selectedApp.description
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 375,
+                                    lineNumber: 386,
                                     columnNumber: 15
+                                }, this),
+                                selectedApp && selectedApp.links && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-6 flex flex-wrap items-center justify-center gap-4",
+                                    children: [
+                                        selectedApp.links.appstore && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: selectedApp.links.appstore,
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            className: "group inline-flex items-center gap-3 px-4 py-2 rounded-xl border border-[#f5f5dc]/30 bg-black/40 text-[#f5f5dc] hover:border-[#f5f5dc]/60 hover:bg-black/60 transition-colors",
+                                            "aria-label": "".concat(selectedApp.name, " on the App Store"),
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    src: "/appstore.png",
+                                                    alt: "Download on the App Store",
+                                                    width: 20,
+                                                    height: 20,
+                                                    className: "w-5 h-5"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                                    lineNumber: 399,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-sm font-medium",
+                                                    children: "App Store"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                                    lineNumber: 400,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                            lineNumber: 392,
+                                            columnNumber: 21
+                                        }, this),
+                                        selectedApp.links.playstore && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: selectedApp.links.playstore,
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            className: "group inline-flex items-center gap-3 px-4 py-2 rounded-xl border border-[#f5f5dc]/30 bg-black/40 text-[#f5f5dc] hover:border-[#f5f5dc]/60 hover:bg-black/60 transition-colors",
+                                            "aria-label": "".concat(selectedApp.name, " on Google Play"),
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    src: "/playstore.png",
+                                                    alt: "Get it on Google Play",
+                                                    width: 20,
+                                                    height: 20,
+                                                    className: "w-5 h-5"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                                    lineNumber: 411,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-sm font-medium",
+                                                    children: "Google Play"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                                    lineNumber: 412,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                            lineNumber: 404,
+                                            columnNumber: 21
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/portfolio-website/src/app/page.tsx",
+                                    lineNumber: 390,
+                                    columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                            lineNumber: 343,
+                            lineNumber: 354,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -891,12 +975,12 @@ function Home() {
                                                         className: "w-6 h-6 text-black"
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 385,
+                                                        lineNumber: 424,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 384,
+                                                    lineNumber: 423,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -904,13 +988,13 @@ function Home() {
                                                     children: "Features"
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 387,
+                                                    lineNumber: 426,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 383,
+                                            lineNumber: 422,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,7 +1008,7 @@ function Home() {
                                                                 className: "w-2 h-2 rounded-full bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mt-2 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                lineNumber: 398,
+                                                                lineNumber: 437,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -932,29 +1016,29 @@ function Home() {
                                                                 children: feature
                                                             }, void 0, false, {
                                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                lineNumber: 399,
+                                                                lineNumber: 438,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 397,
+                                                        lineNumber: 436,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, index, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 393,
+                                                    lineNumber: 432,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 391,
+                                            lineNumber: 430,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 382,
+                                    lineNumber: 421,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -969,12 +1053,12 @@ function Home() {
                                                         className: "w-6 h-6 text-black"
                                                     }, void 0, false, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 410,
+                                                        lineNumber: 449,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 409,
+                                                    lineNumber: 448,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -982,13 +1066,13 @@ function Home() {
                                                     children: "Technologies"
                                                 }, void 0, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 412,
+                                                    lineNumber: 451,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 408,
+                                            lineNumber: 447,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1002,7 +1086,7 @@ function Home() {
                                                                 className: "w-2 h-2 rounded-full bg-gradient-to-r from-[#f5f5dc] to-[#d4af37] mt-2 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                lineNumber: 423,
+                                                                lineNumber: 462,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1010,35 +1094,35 @@ function Home() {
                                                                 children: tech
                                                             }, void 0, false, {
                                                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                                lineNumber: 424,
+                                                                lineNumber: 463,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 461,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, index, false, {
                                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                                    lineNumber: 418,
+                                                    lineNumber: 457,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                            lineNumber: 416,
+                                            lineNumber: 455,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 407,
+                                    lineNumber: 446,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                            lineNumber: 380,
+                            lineNumber: 419,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1050,28 +1134,28 @@ function Home() {
                                     children: "More details and live demos coming soon..."
                                 }, void 0, false, {
                                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                    lineNumber: 434,
+                                    lineNumber: 473,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                                lineNumber: 433,
+                                lineNumber: 472,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/portfolio-website/src/app/page.tsx",
-                            lineNumber: 432,
+                            lineNumber: 471,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                    lineNumber: 330,
+                    lineNumber: 341,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                lineNumber: 329,
+                lineNumber: 340,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -1081,18 +1165,18 @@ function Home() {
                     children: "© 2024 Muhammad Saad - React Native Developer"
                 }, void 0, false, {
                     fileName: "[project]/portfolio-website/src/app/page.tsx",
-                    lineNumber: 446,
+                    lineNumber: 485,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/portfolio-website/src/app/page.tsx",
-                lineNumber: 444,
+                lineNumber: 483,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/portfolio-website/src/app/page.tsx",
-        lineNumber: 137,
+        lineNumber: 147,
         columnNumber: 5
     }, this);
 }
