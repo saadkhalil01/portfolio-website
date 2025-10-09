@@ -280,7 +280,7 @@ export default function Home() {
       {!selectedApp && (
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-[#f5f5dc] mb-8">
-            Experience
+            About Me
           </h2>
 
           {/* About Content */}
