@@ -276,6 +276,78 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Experience Section */}
+      {!selectedApp && (
+        <section className="mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#f5f5dc] mb-8">
+            Experience
+          </h2>
+
+          {/* About Content */}
+          <div className="max-w-4xl space-y-6 text-[#f5f5dc]/85 text-lg leading-relaxed">
+            <p>
+              I'm a passionate <span className="text-[#d4af37] font-semibold">React Native Developer</span> with over 2 years of professional experience building innovative mobile applications across diverse industries including <span className="text-[#f5f5dc] font-medium">mental wellness, healthcare, education, and social engagement</span>.
+            </p>
+            <p>
+              My expertise spans the entire mobile development lifecycle, from conceptualization to deployment on both <span className="text-[#f5f5dc] font-medium">App Store and Google Play</span>. I've successfully delivered 5+ production-ready applications, serving thousands of users worldwide.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+              <div>
+                <h3 className="text-[#d4af37] font-bold text-xl mb-4 flex items-center gap-2">
+                  <CpuChipIcon className="w-6 h-6" />
+                  Core Expertise
+                </h3>
+                <ul className="space-y-2 text-[#f5f5dc]/85">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>React Native & Expo Development</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>Node.js, Express, MongoDB</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>AI Chatbot Integration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>Real-time Features & WebSockets</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-[#d4af37] font-bold text-xl mb-4 flex items-center gap-2">
+                  <StarIcon className="w-6 h-6" />
+                  Specializations
+                </h3>
+                <ul className="space-y-2 text-[#f5f5dc]/85">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>Payment Integration (Stripe & more)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>Push & In-app Notifications</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>Video Consultation (ZegoCloud)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#d4af37] mt-1">•</span>
+                    <span>Multi-language Support</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              I thrive on solving complex challenges and creating seamless user experiences. Whether it's integrating cutting-edge AI technology, implementing secure payment systems, or building real-time communication features, I bring <span className="text-[#f5f5dc] font-medium">technical excellence and creative problem-solving</span> to every project.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Portfolio Grid */}
       {!selectedApp ? (
         <main className="max-w-6xl mx-auto relative px-4">
