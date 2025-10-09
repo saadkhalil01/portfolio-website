@@ -15,7 +15,9 @@ import {
   EnvelopeIcon,
   DocumentTextIcon,
   ChevronDownIcon,
-  ChatBubbleLeftRightIcon
+  ChatBubbleLeftRightIcon,
+  AcademicCapIcon,
+  ShoppingCartIcon
 } from '@heroicons/react/24/outline';
 // Icon component for each app
 const AppIcon = ({ name }: { name: string }) => {
@@ -30,6 +32,8 @@ const AppIcon = ({ name }: { name: string }) => {
       return <UserGroupIcon {...iconProps} />;
     case "Spectrum":
       return <SwatchIcon {...iconProps} />;
+    case "SplitMartt":
+      return <AcademicCapIcon {...iconProps} />;
     default:
       return <SparklesIcon {...iconProps} />;
   }
@@ -83,6 +87,19 @@ const apps = [
     technologies: ["React Native", "Node.js", "MongoDB", "Express"],
     features: ["Push Notifications", "Dual-language Support (Arabic/English)", "Video Consultation (ZegoCloud)", "Doctor Appointments"]
   },
+  {
+    id: 5,
+    name: "SplitMartt",
+    logo: "SplitMartt",
+    description: "Educational marketplace platform for teaching, learning, and service selling. Features real-time chat, course management, and integrated payment processing.",
+    screens: ["Courses", "Marketplace", "Chat", "Payments", "Dashboard"],
+    technologies: ["React Native", "Node.js", "MongoDB", "Express", "Payment Integration"],
+    features: ["Course Management", "Service Marketplace", "Real-time Chat", "Payment Processing", "User Ratings & Reviews"],
+    links: {
+      appstore: "https://apps.apple.com/pk/app/splitmart/id6740323886",
+      playstore: "https://play.google.com/store/apps/details?id=com.splitmart"
+    }
+  },
 ];
 
 // Helper function to get logo for each app
@@ -92,7 +109,7 @@ const getAppLogo = (appName: string, logo: string) => {
     "LoyalAI": "/loyal-ai-logo.png",
     "FanGenie": "/fangenie-logo.jpg",
     "Spectrum": "/spectrum-logo.png",
-    // SplitMart removed
+    "SplitMartt": "/splitmart-logo.png",
   };
 
   // Check if app has a custom image logo

@@ -107,6 +107,10 @@ const metadata = {
     icons: {
         icon: [
             {
+                url: '/favicon.svg',
+                type: 'image/svg+xml'
+            },
+            {
                 url: '/favicon-16x16.png',
                 sizes: '16x16',
                 type: 'image/png'
@@ -115,6 +119,9 @@ const metadata = {
                 url: '/favicon-32x32.png',
                 sizes: '32x32',
                 type: 'image/png'
+            },
+            {
+                url: '/favicon.ico'
             }
         ],
         apple: [
@@ -179,12 +186,12 @@ function RootLayout({ children }) {
                     href: "/site.webmanifest"
                 }, void 0, false, {
                     fileName: "[project]/portfolio-website/src/app/layout.tsx",
-                    lineNumber: 78,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/portfolio-website/src/app/layout.tsx",
-                lineNumber: 77,
+                lineNumber: 79,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$portfolio$2d$website$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -192,13 +199,13 @@ function RootLayout({ children }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/portfolio-website/src/app/layout.tsx",
-                lineNumber: 80,
+                lineNumber: 82,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/portfolio-website/src/app/layout.tsx",
-        lineNumber: 76,
+        lineNumber: 78,
         columnNumber: 5
     }, this);
 }
