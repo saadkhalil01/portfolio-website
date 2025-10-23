@@ -166,10 +166,10 @@ export default function Home() {
       <header className="text-left mb-16 relative">
         <div className="mb-6">
           <div className="flex items-center">
-            <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-slate-900 bg-white px-6 py-2 tracking-tight">
+            <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-white  px-6 py-2 tracking-tight">
               SAAD
             </span>
-            <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-white bg-blue-600 px-6 py-2 tracking-tight">
+            <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-black bg-white px-6 py-2 tracking-tight">
               KHALIL
             </span>
           </div>
@@ -465,31 +465,70 @@ export default function Home() {
 
               <div className="text-center mb-12">
                 <div className="mb-8 floating">
-                  <div className="inline-block p-6 rounded-2xl bg-gradient-to-br from-blue-500/15 to-blue-600/10 backdrop-blur-sm border border-blue-400/20">
-                    {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.name ? (
-                      selectedApp.name === "Spectrum" ? (
-                        <div style={{ width: 140, height: 140, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                          <Image
-                            src={getAppLogo(selectedApp.name, selectedApp.logo)}
-                            alt={`${selectedApp.name} Logo`}
-                            fill
-                            style={{ objectFit: 'contain', objectPosition: 'center' }}
-                          />
-                        </div>
+                  <div
+                    style={{
+                      height: '200px',
+                      width: '200px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                      borderRadius: '1000px',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor:
+                          (selectedApp.name === 'LoyalAI' || selectedApp.name === 'FanGenie')
+                            ? '#000'
+                            : (selectedApp.name === 'SplitMart')
+                              ? '#E5F8FF'
+                              : '#f8fafc'
+                      }}
+                    >
+                      {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.name ? (
+                        selectedApp.name === "Spectrum" ? (
+                          <div style={{
+                            width: 90, height: 90,
+                            display: 'flex', alignItems: 'center',
+                            justifyContent: 'center', position: 'relative'
+                          }}>
+                            <Image
+                              src={getAppLogo(selectedApp.name, selectedApp.logo)}
+                              alt={`${selectedApp.name} Logo`}
+                              fill
+                              style={{ objectFit: 'contain', objectPosition: 'center' }}
+                            />
+                          </div>
+                        ) :
+                          selectedApp.name === "SplitMart" ? (
+                            <Image
+                              src={getAppLogo(selectedApp.name, selectedApp.logo)}
+                              alt={`${selectedApp.name} Logo`}
+                              width={150}
+                              height={150}
+                            />
+                          ) : (
+                            <Image
+                              src={getAppLogo(selectedApp.name, selectedApp.logo)}
+                              alt={`${selectedApp.name} Logo`}
+                              width={150}
+                              height={150}
+                              className="mx-auto drop-shadow-sm"
+                            />
+                          )
                       ) : (
-                        <Image
-                          src={getAppLogo(selectedApp.name, selectedApp.logo)}
-                          alt={`${selectedApp.name} Logo`}
-                          width={140}
-                          height={140}
-                          className="drop-shadow-lg"
-                        />
-                      )
-                    ) : (
-                      <div className="flex justify-center items-center">
-                        <AppIcon name={selectedApp.name} />
-                      </div>
-                    )}
+                        <div className="flex justify-center items-center">
+                          <AppIcon name={selectedApp.name} />
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6 tracking-tight">
