@@ -422,7 +422,7 @@ export default function Home() {
           </main>
         ) : (
           /* App Detail Screen */
-          <main className="max-w-5xl mx-auto px-3">
+          <main className="">
             <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/20 backdrop-blur-xl border border-blue-500/20 rounded-3xl p-5 md:p-12 shadow-2xl">
               <button
                 onClick={handleBackFromDetails}
@@ -437,7 +437,7 @@ export default function Home() {
               </button>
 
               <div className="text-center mb-12">
-                <div className="mb-8 floating">
+                <div className="mb-8 ">
                   <div
                     style={{
                       height: '200px',
@@ -525,6 +525,49 @@ export default function Home() {
                   </div>
                 )}
               </div>
+
+              {/* Screenshots Section - Only for LoyalAI */}
+              {selectedApp.name === "LoyalAI" && (
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                      <DevicePhoneMobileIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-100">
+                      App Preview
+                    </h3>
+                  </div>
+                  <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-blue-500/50 scrollbar-track-slate-800/50">
+                    <div className="flex gap-4 min-w-max">
+                      {[
+                        "/loyalai/iMockup - iPhone 15 Pro1 Max.png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max (1).png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max (2).png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max (3).png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max-2.png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max-4.png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max-3.png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max-1.png",
+                        "/loyalai/iMockup - iPhone 15 Pro Max.png",
+
+                      ].map((screenshot, index) => (
+
+                        <div key={index} className="relative w-64 h-[500px] rounded-2xl overflow-hidden shadow-lg group-hover:shadow-blue-500/50 transition-shadow duration-300">
+                          <Image
+                            src={screenshot}
+                            alt={`LoyalAI Screenshot ${index + 1}`}
+                            width={256}
+                            height={500}
+                            loading="lazy"
+                            quality={75}
+                            className="object-contain w-full h-full transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 {/* Features */}
