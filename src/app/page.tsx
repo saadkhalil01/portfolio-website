@@ -10,7 +10,6 @@ import {
   SparklesIcon,
   CpuChipIcon,
   UserGroupIcon,
-  SwatchIcon,
   StarIcon,
   EnvelopeIcon,
   DocumentTextIcon,
@@ -30,8 +29,6 @@ const AppIcon = ({ name }: { name: string }) => {
       return <CpuChipIcon {...iconProps} />;
     case "FanGenie":
       return <UserGroupIcon {...iconProps} />;
-    case "Spectrum":
-      return <SwatchIcon {...iconProps} />;
     case "SplitMart":
       return <AcademicCapIcon {...iconProps} />;
     default:
@@ -80,15 +77,6 @@ const apps = [
   },
   {
     id: 4,
-    name: "Spectrum",
-    logo: "Spectrum",
-    description: "Healthcare app for KSA with push notifications, doctor appointments, and dual-language support (Arabic/English). Not available on stores.",
-    screens: ["Projects", "Tasks", "Team", "Timeline", "Reports"],
-    technologies: ["React Native", "Node.js", "MongoDB", "Express"],
-    features: ["Push Notifications", "Dual-language Support (Arabic/English)", "Video Consultation (ZegoCloud)", "Doctor Appointments"]
-  },
-  {
-    id: 5,
     name: "SplitMart",
     logo: "SplitMart",
     description: "Educational marketplace platform for teaching, learning, and service selling. Features real-time chat, course management, and integrated payment processing.",
@@ -108,7 +96,6 @@ const getAppLogo = (appName: string, logo: string) => {
     "MyndSpark": "/myndspark-logo.png",
     "LoyalAI": "/loyal-ai-logo.png",
     "FanGenie": "/fangenie-logo.jpg",
-    "Spectrum": "/spectrum-logo.png",
     "SplitMart": "/splitmart-logo.png",
   };
 
@@ -395,36 +382,22 @@ export default function Home() {
                         }}
                       >
                         {getAppLogo(app.name, app.logo) !== app.name ? (
-                          app.name === "Spectrum" ? (
-                            <div style={{
-                              width: 90, height: 90,
-                              display: 'flex', alignItems: 'center',
-                              justifyContent: 'center', position: 'relative'
-                            }}>
-                              <Image
-                                src={getAppLogo(app.name, app.logo)}
-                                alt={`${app.name} Logo`}
-                                fill
-                                style={{ objectFit: 'contain', objectPosition: 'center' }}
-                              />
-                            </div>
-                          ) :
-                            app.name === "SplitMart" ? (
-                              <Image
-                                src={getAppLogo(app.name, app.logo)}
-                                alt={`${app.name} Logo`}
-                                width={150}
-                                height={150}
-                              />
-                            ) : (
-                              <Image
-                                src={getAppLogo(app.name, app.logo)}
-                                alt={`${app.name} Logo`}
-                                width={150}
-                                height={150}
-                                className="mx-auto drop-shadow-sm"
-                              />
-                            )
+                          app.name === "SplitMart" ? (
+                            <Image
+                              src={getAppLogo(app.name, app.logo)}
+                              alt={`${app.name} Logo`}
+                              width={150}
+                              height={150}
+                            />
+                          ) : (
+                            <Image
+                              src={getAppLogo(app.name, app.logo)}
+                              alt={`${app.name} Logo`}
+                              width={150}
+                              height={150}
+                              className="mx-auto drop-shadow-sm"
+                            />
+                          )
                         ) : (
                           <div className="flex justify-center items-center">
                             <AppIcon name={app.name} />
@@ -493,36 +466,22 @@ export default function Home() {
                       }}
                     >
                       {getAppLogo(selectedApp.name, selectedApp.logo) !== selectedApp.name ? (
-                        selectedApp.name === "Spectrum" ? (
-                          <div style={{
-                            width: 90, height: 90,
-                            display: 'flex', alignItems: 'center',
-                            justifyContent: 'center', position: 'relative'
-                          }}>
-                            <Image
-                              src={getAppLogo(selectedApp.name, selectedApp.logo)}
-                              alt={`${selectedApp.name} Logo`}
-                              fill
-                              style={{ objectFit: 'contain', objectPosition: 'center' }}
-                            />
-                          </div>
-                        ) :
-                          selectedApp.name === "SplitMart" ? (
-                            <Image
-                              src={getAppLogo(selectedApp.name, selectedApp.logo)}
-                              alt={`${selectedApp.name} Logo`}
-                              width={150}
-                              height={150}
-                            />
-                          ) : (
-                            <Image
-                              src={getAppLogo(selectedApp.name, selectedApp.logo)}
-                              alt={`${selectedApp.name} Logo`}
-                              width={150}
-                              height={150}
-                              className="mx-auto drop-shadow-sm"
-                            />
-                          )
+                        selectedApp.name === "SplitMart" ? (
+                          <Image
+                            src={getAppLogo(selectedApp.name, selectedApp.logo)}
+                            alt={`${selectedApp.name} Logo`}
+                            width={150}
+                            height={150}
+                          />
+                        ) : (
+                          <Image
+                            src={getAppLogo(selectedApp.name, selectedApp.logo)}
+                            alt={`${selectedApp.name} Logo`}
+                            width={150}
+                            height={150}
+                            className="mx-auto drop-shadow-sm"
+                          />
+                        )
                       ) : (
                         <div className="flex justify-center items-center">
                           <AppIcon name={selectedApp.name} />
