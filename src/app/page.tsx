@@ -166,7 +166,7 @@ export default function Home() {
             React Native Developer
           </p>
           <p className="text-lg sm:text-xl text-slate-300 font-medium">
-            2+ Years Experience
+            2.5+ Years Experience
           </p>
           <div className="flex items-center gap-6 mt-6">
             {/* Contact Dropdown */}

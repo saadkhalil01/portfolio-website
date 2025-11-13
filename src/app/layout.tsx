@@ -19,7 +19,7 @@ const urbanist = Urbanist({
 
 export const metadata: Metadata = {
   title: "Muhammad Saad - React Native Developer",
-  description: "Portfolio of Muhammad Saad - React Native Developer with 2+ years experience",
+  description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience",
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Muhammad Saad - React Native Developer",
-    description: "Portfolio of Muhammad Saad - React Native Developer with 2+ years experience",
+    description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience",
     url: "https://saadkhalil.dev",
     siteName: "Saad Khalil Portfolio",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Saad - React Native Developer",
-    description: "Portfolio of Muhammad Saad - React Native Developer with 2+ years experience",
+    description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience",
     images: ["/android-chrome-512x512.png"],
   },
   robots: {
