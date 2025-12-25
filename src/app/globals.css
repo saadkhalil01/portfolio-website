@@ -11,20 +11,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-urbanist), var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #0f172a 0%,
-    #1e293b 50%,
-    #334155 100%
-  ) !important;
-  color: var(--foreground) !important;
-  font-family: var(--font-urbanist), var(--font-geist-sans), Arial, Helvetica,
-    sans-serif !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
   min-height: 100vh !important;
   overflow-x: hidden !important;
 }
@@ -138,6 +130,24 @@ body {
   background-clip: text;
 }
 
+/* Animated gradient background */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
 /* Roadway line animations */
 @keyframes roadFlow {
   0% {
@@ -170,18 +180,46 @@ body {
   background: rgba(59, 130, 246, 0.5);
 }
 
-/* Force professional theme override */
+/* Plain background */
 html,
 body {
-  background: linear-gradient(
-    135deg,
-    #0f172a 0%,
-    #1e293b 50%,
-    #334155 100%
-  ) !important;
+  background: #ffffff !important;
 }
 
 /* Ensure black theme for all elements */
 * {
   --tw-bg-opacity: 1;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced fade-in animation with stagger */
+@keyframes fadeInUpStagger {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeInUpStagger 600ms ease-out both;
+}
+
+/* Improved hover effects for interactive elements */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Better focus states */
+*:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
