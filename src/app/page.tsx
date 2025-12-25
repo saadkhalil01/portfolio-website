@@ -21,6 +21,48 @@ import {
   EnvelopeIcon as EnvelopeIconSolid,
   DevicePhoneMobileIcon as DevicePhoneMobileIconSolid
 } from '@heroicons/react/24/solid';
+// React Atom Icon Component for background
+const ReactAtomIcon = ({ className = "w-64 h-64", opacity = 0.05 }: { className?: string; opacity?: number }) => (
+  <svg
+    viewBox="0 0 200 200"
+    className={className}
+    style={{ opacity }}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Central circle */}
+    <circle cx="100" cy="100" r="8" fill="black" />
+    {/* Three elliptical orbits */}
+    <ellipse
+      cx="100"
+      cy="100"
+      rx="60"
+      ry="20"
+      stroke="black"
+      strokeWidth="2"
+      transform="rotate(0 100 100)"
+    />
+    <ellipse
+      cx="100"
+      cy="100"
+      rx="60"
+      ry="20"
+      stroke="black"
+      strokeWidth="2"
+      transform="rotate(60 100 100)"
+    />
+    <ellipse
+      cx="100"
+      cy="100"
+      rx="60"
+      ry="20"
+      stroke="black"
+      strokeWidth="2"
+      transform="rotate(120 100 100)"
+    />
+  </svg>
+);
+
 // Icon component for each app
 const AppIcon = ({ name }: { name: string }) => {
   const iconProps = { className: "w-16 h-16" };
@@ -153,6 +195,7 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-8 relative overflow-hidden bg-gray-50">
 
+
       {/* Header */}
       <header className="text-left mb-8 relative z-20">
         <div className="mb-6">
@@ -164,6 +207,12 @@ export default function Home() {
               KHALIL
             </span>
           </div>
+          {/* React Atom Background Pattern */}
+
+          <div className="absolute left-0 bottom-0">
+            <ReactAtomIcon className="w-180 h-105" opacity={0.07} />
+          </div>
+
         </div>
         <div className="space-y-4">
           <p className="text-2xl sm:text-3xl lg:text-4xl font-normal text-black">
