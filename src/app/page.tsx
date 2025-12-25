@@ -152,7 +152,7 @@ export default function Home() {
       {/* Header */}
       <header className="text-left mb-16 relative z-20">
         <div className="mb-6">
-          <div className="flex gap-2 justify-start">
+          <div className="flex">
             <span className="text-5xl sm:text-7xl lg:text-8xl font-black text-black bg-white px-6 py-2 tracking-tight">
               SAAD
             </span>
