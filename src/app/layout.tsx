@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Comic_Neue } from "next/font/google";
 import "./globals.css";
+
+const comicNeue = Comic_Neue({
+  weight: ['300', '400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-comic-neue',
+});
 
 export const metadata: Metadata = {
   title: "Muhammad Saad - React Native Developer",
@@ -63,7 +71,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className="antialiased">
+      <body className={`${comicNeue.variable} antialiased`}>
         {children}
       </body>
     </html>

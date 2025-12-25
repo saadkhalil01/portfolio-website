@@ -14,9 +14,9 @@
 }
 
 body {
-  background: #ffffff !important;
+  background: #f9fafb !important;
   color: #000000 !important;
-  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+  font-family: var(--font-comic-neue), "Comic Sans MS", "Comic Sans", cursive !important;
   min-height: 100vh !important;
   overflow-x: hidden !important;
 }
@@ -183,7 +183,7 @@ body {
 /* Plain background */
 html,
 body {
-  background: #ffffff !important;
+  background: #f9fafb !important;
 }
 
 /* Ensure black theme for all elements */
