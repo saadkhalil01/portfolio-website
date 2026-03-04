@@ -355,7 +355,9 @@ export default function Home() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl overflow-y-auto px-6 py-12"
           >
-            <div className="max-w-5xl mx-auto">
+            <div style={{
+              padding: 50,
+            }} className="mx-auto">
               <motion.button
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -371,35 +373,35 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   className="space-y-8"
                 >
-                  <div className="w-24 h-24 rounded-3xl overflow-hidden shadow-2xl">
+                  <div style={{ marginTop: 50 }} className="w-24 h-24 rounded-3xl overflow-hidden shadow-2xl">
                     <Image src={selectedApp.logo} alt={selectedApp.name} width={96} height={96} className="object-cover" />
                   </div>
                   <div>
-                    <h2 className="text-5xl font-black mb-4">{selectedApp.name}</h2>
+                    <h2 style={{ textAlign: 'left', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-5xl font-black mb-4">{selectedApp.name}</h2>
                     <p className="text-slate-400 text-xl leading-relaxed">{selectedApp.description}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div style={{ marginTop: 10, marginBottom: 20 }} className="flex flex-wrap gap-3">
                     {selectedApp.technologies.map(tech => (
                       <span key={tech} className="badge">{tech}</span>
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-4 pt-4">
+                  <div style={{ marginTop: 10 }} className="flex flex-wrap gap-4 pt-4">
                     {selectedApp.links.appstore && (
-                      <a href={selectedApp.links.appstore} target="_blank" className="px-6 py-3 bg-white text-black rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform">
+                      <a style={{ height: 30, paddingLeft: 10, paddingRight: 10, borderRadius: 100 }} href={selectedApp.links.appstore} target="_blank" className="px-6 py-3 bg-white text-black rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform">
                         <Smartphone className="w-5 h-5" /> App Store
                       </a>
                     )}
                     {selectedApp.links.playstore && (
-                      <a href={selectedApp.links.playstore} target="_blank" className="px-6 py-3 glass-panel rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform">
+                      <a style={{ height: 30, paddingLeft: 10, paddingRight: 10, borderRadius: 100 }} href={selectedApp.links.playstore} target="_blank" className="px-6 py-3 glass-panel rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform">
                         <Globe className="w-5 h-5" /> Play Store
                       </a>
                     )}
                   </div>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -418,7 +420,7 @@ export default function Home() {
                       <Layers className="w-20 h-20 text-white/20" />
                     </div>
                   )}
-                </motion.div>
+                </motion.div> */}
               </div>
             </div>
           </motion.div>
