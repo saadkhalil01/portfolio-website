@@ -107,22 +107,25 @@ const Navbar = () => {
 };
 
 const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; subtitle?: string }) => (
-  <div className="mb-12">
+  <div className="mb-12 text-center flex flex-col items-center">
     <motion.h2
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      style={{
+        marginBottom: 10,
+      }}
       className="text-4xl md:text-5xl font-bold mb-4"
     >
       {children}
     </motion.h2>
     {subtitle && (
       <motion.p
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-slate-400 text-lg"
+        className="text-slate-400 text-lg max-w-2xl mx-auto"
       >
         {subtitle}
       </motion.p>
@@ -220,26 +223,37 @@ export default function Home() {
       </section>
 
       {/* About / Expertise */}
-      <section id="about" className="py-32 px-6 max-w-7xl mx-auto">
+      <section style={{
+        marginBottom: 100,
+      }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center">
         <SectionHeading subtitle="Technical stack & specializations">Expertise</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div style={{
+          marginTop: 20,
+        }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-7xl">
           {expertise.map((item, idx) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              style={{
+                padding: 25,
+              }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-panel p-8 rounded-3xl"
+              className="glass-panel  rounded-[2.5rem] flex flex-col hover:bg-white/5 transition-colors border-white/5"
             >
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
-                <item.icon className="w-6 h-6 text-blue-400" />
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+                <item.icon className="w-8 h-8 text-blue-400" />
               </div>
-              <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-              <ul className="space-y-2">
+              <h3 style={{
+                marginTop: 20,
+              }} className="text-2xl font-bold mb-6">{item.title}</h3>
+              <ul style={{
+                marginTop: 20,
+              }}>
                 {item.items.map(tech => (
-                  <li key={tech} className="text-slate-400 text-sm flex items-center gap-2">
-                    <div className="w-1 h-1 bg-blue-500 rounded-full" /> {tech}
+                  <li key={tech} className="text-slate-400 text-base flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" /> {tech}
                   </li>
                 ))}
               </ul>
@@ -249,9 +263,13 @@ export default function Home() {
       </section>
 
       {/* Portfolio Grid */}
-      <section id="work" className="py-32 px-6 max-w-7xl mx-auto">
+      <section style={{
+        marginBottom: 100,
+      }} id="work" className="py-32 px-6  mx-auto flex flex-col items-center">
         <SectionHeading subtitle="Handcrafted mobile applications">Selected Projects</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div style={{
+          marginTop: 20,
+        }} className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-7xl">
           {apps.map((app, idx) => (
             <motion.div
               key={app.id}
@@ -259,30 +277,33 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
+              style={{
+                padding: 25,
+              }}
               onClick={() => setSelectedApp(app)}
-              className={`group relative overflow-hidden rounded-[2.5rem] glass-panel p-1 cursor-pointer glass-panel-hover`}
+              className={`group relative overflow-hidden rounded-[3rem] glass-panel p-2 cursor-pointer glass-panel-hover flex flex-col`}
             >
-              <div className="aspect-[4/3] relative rounded-[2.2rem] overflow-hidden bg-slate-900 flex items-center justify-center p-12">
-                <div className={`absolute inset-0 ${app.bg} opacity-50 group-hover:opacity-100 transition-opacity`} />
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="relative z-10 w-32 h-32 md:w-48 md:h-48 rounded-[2rem] overflow-hidden shadow-2xl"
-                >
-                  <Image
-                    src={app.logo}
-                    alt={app.name}
-                    fill
-                    className="object-cover"
-                  />
-                </motion.div>
-              </div>
-              <div className="p-8 flex items-end justify-between">
+              <motion.div
+                style={{ marginBottom: 20 }}
+                whileHover={{ scale: 1.05 }}
+                className="relative z-10 w-40 h-40 md:w-56 md:h-56 rounded-[2.5rem] overflow-hidden shadow-2xl"
+              >
+                <Image
+                  src={app.logo}
+                  alt={app.name}
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              <div className="p-10 flex items-center justify-between">
                 <div>
-                  <span className="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2 block">{app.category}</span>
-                  <h3 className="text-3xl font-bold">{app.name}</h3>
+                  <span style={{
+                    marginBottom: 10,
+                  }} className="text-blue-400 text-sm font-bold uppercase tracking-widest mb-3 block">{app.category}</span>
+                  <h3 className="text-4xl font-bold tracking-tight">{app.name}</h3>
                 </div>
-                <div className="h-12 w-12 flex items-center justify-center rounded-2xl glass-panel group-hover:bg-white group-hover:text-black transition-all">
-                  <ArrowLeft className="w-6 h-6 rotate-180" />
+                <div className="h-16 w-16 flex items-center justify-center rounded-[1.5rem] glass-panel group-hover:bg-white group-hover:text-black transition-all shadow-xl">
+                  <ArrowLeft className="w-8 h-8 rotate-180" />
                 </div>
               </div>
             </motion.div>
@@ -295,20 +316,25 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="max-w-5xl mx-auto glass-panel p-16 rounded-[3rem] text-center space-y-8 relative overflow-hidden"
+          style={{
+            padding: 50, width: '95%', alignSelf: "center", margin: "0 auto",
+            marginBottom: 20,
+            marginTop: 20
+          }}
+          className="mx-auto glass-panel p-16 rounded-[3rem] text-center space-y-8 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 blur-[100px]" />
 
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Let&apos;s build something <br />extraordinary.</h2>
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
+          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-slate-400 text-xl max-w-2xl mx-auto">
             Ready to bring your mobile app vision to life? Let&apos;s connect and discuss your next big project.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a href="mailto:saadkhalil9999@gmail.com" className="px-8 py-4 bg-white text-black rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2">
+            <a style={{ padding: 10, borderRadius: 100 }} href="mailto:saadkhalil9999@gmail.com" className="px-8 py-4 bg-white text-black rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2">
               <Mail className="w-5 h-5" /> Message Me
             </a>
-            <a href="https://wa.me/923229953346" className="px-8 py-4 glass-panel rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2">
+            <a style={{ padding: 10, borderRadius: 100 }} href="https://wa.me/923229953346" className="px-8 py-4 glass-panel rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2">
               <Phone className="w-5 h-5" /> WhatsApp
             </a>
           </div>
