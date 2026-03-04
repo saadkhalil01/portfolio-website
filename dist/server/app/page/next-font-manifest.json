@@ -1,10 +1,9 @@
 {
   "pages": {},
   "app": {
-    "[project]/portfolio-website/src/app/page": [
-      "static/media/134948925f7580b3-s.p.74f4e0e3.woff2",
-      "static/media/edb82671f1e8f812-s.p.86d5aefd.woff2",
-      "static/media/aee29876688b27b8-s.p.900acbe7.woff2"
+    "[project]/src/app/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ]
   },
   "appUsingSizeAdjust": true,

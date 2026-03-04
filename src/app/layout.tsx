@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Comic_Neue } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 
-const comicNeue = Comic_Neue({
-  weight: ['300', '400', '700'],
+const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-comic-neue',
+  variable: '--font-outfit',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -67,13 +72,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${inter.variable}`}>
       <head>
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${comicNeue.variable} antialiased`}>
+      <body className="antialiased">
+        <div className="mesh-background" />
         {children}
       </body>
     </html>
   );
 }
+
