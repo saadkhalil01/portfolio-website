@@ -93,12 +93,13 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
+      style={{ height: 40 }}
       className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2.5 glass-panel rounded-full flex items-center gap-4 sm:gap-8 min-w-max"
     >
-      <a href="#" className="nav-link text-sm font-medium">Home</a>
-      <a href="#work" className="nav-link text-sm font-medium">Work</a>
-      <a href="#about" className="nav-link text-sm font-medium">About</a>
-      <a href="mailto:saadkhalil9999@gmail.com" className="px-5 py-2 bg-white text-black rounded-full text-sm font-bold hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+      <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#" className="nav-link text-sm font-medium">Home</a>
+      <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#work" className="nav-link text-sm font-medium">Work</a>
+      <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#about" className="nav-link text-sm font-medium">About</a>
+      <a style={{ height: "100%", alignItems: "center", justifyContent: "center", display: "flex", paddingLeft: 15, paddingRight: 15 }} href="mailto:saadkhalil9999@gmail.com" className="px-5 py-2 bg-white text-black rounded-full text-sm font-bold hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)]">
         Hire Me
       </a>
     </motion.nav>
@@ -154,6 +155,11 @@ export default function Home() {
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
+            style={{
+              marginTop: 20,
+              marginBottom: 20,
+              padding: 10
+            }}
             className="inline-block px-4 py-1.5 rounded-full glass-panel text-blue-400 text-sm font-medium mb-4 border-blue-500/20 backdrop-blur-md"
           >
             Available for New Projects
@@ -173,6 +179,10 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
+            style={{
+              marginTop: 20,
+              marginBottom: 20,
+            }}
             className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
             I&apos;m <span className="text-white font-extrabold text-2xl md:text-3xl">Saad</span>, a Senior React Native Engineer specializing in high-performance cross-platform apps and AI integrations.
@@ -184,7 +194,11 @@ export default function Home() {
             transition={{ delay: 0.4 }}
             className="flex flex-wrap items-center justify-center gap-6 pt-4"
           >
-            <a href="#work" className="h-14 px-8 bg-white text-black rounded-2xl font-bold flex items-center gap-2 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+            <a
+              style={{
+                padding: 20,
+              }}
+              href="#work" className="h-14 px-8 bg-white text-black rounded-2xl font-bold flex items-center gap-2 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
               Explore My Work <ChevronDown className="w-5 h-5" />
             </a>
             <div className="flex items-center gap-4">
