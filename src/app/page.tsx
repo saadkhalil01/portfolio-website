@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
   Github,
   Linkedin,
-  Mail,
-  Phone,
   ChevronDown,
   ArrowLeft,
   Smartphone,
@@ -174,7 +174,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-6xl md:text-8xl font-black tracking-tight"
           >
-            Crafting <span className="text-gradient-primary">Mobile</span> <br />
+            Crafting <span style={{ paddingRight: 10 }} className="text-gradient-primary">Mobile</span><br />
             Experiences.
           </motion.h1>
 
@@ -183,12 +183,12 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
             style={{
-              marginTop: 20,
+              marginTop: 30,
               marginBottom: 20,
             }}
             className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
-            I&apos;m <span className="text-white font-extrabold text-2xl md:text-3xl">Saad</span>, a Senior React Native Engineer specializing in high-performance cross-platform apps and AI integrations.
+            I&apos;m <span className="text-white font-extrabold text-8xl md:text-3xl">Saad Khalil</span>, a Senior React Native Engineer specializing in high-performance cross-platform apps and AI integrations.
           </motion.p>
 
           <motion.div
@@ -264,12 +264,13 @@ export default function Home() {
 
       {/* Portfolio Grid */}
       <section style={{
-        marginBottom: 100,
+        marginBottom: 60,
       }} id="work" className="py-32 px-6  mx-auto flex flex-col items-center">
         <SectionHeading subtitle="Handcrafted mobile applications">Selected Projects</SectionHeading>
         <div style={{
-          marginTop: 20,
-        }} className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-7xl">
+          marginTop: 40,
+        }} className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch w-full max-w-7xl"
+        >
           {apps.map((app, idx) => (
             <motion.div
               key={app.id}
@@ -281,7 +282,7 @@ export default function Home() {
                 padding: 25,
               }}
               onClick={() => setSelectedApp(app)}
-              className={`group relative overflow-hidden rounded-[3rem] glass-panel p-2 cursor-pointer glass-panel-hover flex flex-col`}
+              className={`group relative overflow-hidden rounded-[3rem] glass-panel p-2 cursor-pointer glass-panel-hover flex flex-col h-full`}
             >
               <motion.div
                 style={{ marginBottom: 20 }}
@@ -317,11 +318,11 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           style={{
-            padding: 50, width: '95%', alignSelf: "center", margin: "0 auto",
+            padding: 50, alignSelf: "center", margin: "0 auto",
             marginBottom: 20,
             marginTop: 20
           }}
-          className="mx-auto glass-panel p-16 rounded-[3rem] text-center space-y-8 relative overflow-hidden"
+          className="mx-auto glass-panel p-16 rounded-[3rem] text-center space-y-8 relative overflow-hidden w-full max-w-7xl"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 blur-[100px]" />
@@ -331,11 +332,11 @@ export default function Home() {
             Ready to bring your mobile app vision to life? Let&apos;s connect and discuss your next big project.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a style={{ padding: 10, borderRadius: 100 }} href="mailto:saadkhalil9999@gmail.com" className="px-8 py-4 bg-white text-black rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <Mail className="w-5 h-5" /> Message Me
+            <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="mailto:saadkhalil9999@gmail.com" className="bg-white text-black font-bold hover:scale-105 transition-transform flex items-center gap-2">
+              <SiGmail className="w-5 h-5" /> Message Me
             </a>
-            <a style={{ padding: 10, borderRadius: 100 }} href="https://wa.me/923229953346" className="px-8 py-4 glass-panel rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <Phone className="w-5 h-5" /> WhatsApp
+            <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="https://wa.me/923229953346" className="glass-panel font-bold hover:scale-105 transition-transform flex items-center gap-2">
+              <FaWhatsapp className="w-5 h-5" /> WhatsApp
             </a>
           </div>
         </motion.div>
