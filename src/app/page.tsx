@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
@@ -11,6 +9,8 @@ import {
   ChevronDown,
   ArrowLeft,
   Smartphone,
+  Mail,
+  MessageCircle,
   Zap,
   Cpu,
   Globe,
@@ -155,24 +155,12 @@ export default function Home() {
         </motion.div>
 
         <div className="relative z-10 text-center space-y-8 max-w-4xl">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            style={{
-              marginTop: 20,
-              marginBottom: 20,
-              padding: 10
-            }}
-            className="inline-block px-4 py-1.5 rounded-full glass-panel text-blue-400 text-sm font-medium mb-4 border-blue-500/20 backdrop-blur-md"
-          >
-            Available for New Projects
-          </motion.div>
 
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-6xl md:text-8xl font-black tracking-tight"
+            className="text-5xl md:text-8xl font-black tracking-tight"
           >
             Crafting <span style={{ paddingRight: 10 }} className="text-gradient-primary">Mobile</span><br />
             Experiences.
@@ -183,12 +171,14 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
             style={{
-              marginTop: 30,
-              marginBottom: 20,
+              marginLeft: 20,
+              marginRight: 20,
+              marginTop: 40,
+              marginBottom: 40,
             }}
             className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
-            I&apos;m <span className="text-white font-extrabold text-8xl md:text-3xl">Saad Khalil</span>, a Senior React Native Engineer specializing in high-performance cross-platform apps and AI integrations.
+            I&apos;m <span className="text-white font-bold text-3xl md:text-7xl leading-tight">Saad Khalil</span>, a Senior React Native Engineer specializing in high-performance cross-platform apps and AI integrations.
           </motion.p>
 
           <motion.div
@@ -333,10 +323,10 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="mailto:saadkhalil9999@gmail.com" className="bg-white text-black font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <SiGmail className="w-5 h-5" /> Message Me
+              <Mail className="w-5 h-5" /> Message Me
             </a>
             <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="https://wa.me/923229953346" className="glass-panel font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <FaWhatsapp className="w-5 h-5" /> WhatsApp
+              <MessageCircle className="w-5 h-5" /> WhatsApp
             </a>
           </div>
         </motion.div>
