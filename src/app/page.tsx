@@ -23,7 +23,7 @@ const apps = [
   {
     id: 1,
     name: "MyndSpark",
-    description: "Mental wellness app with real-time push/in-app notifications and an AI chatbot for mental health. Available on App Store and Play Store.",
+    description: "Helped a health startup deliver a seamless mental wellness platform by integrating a responsive AI chatbot and real-time notifications, achieving a successful App Store and Play Store launch.",
     technologies: ["React Native", "Node.js", "MongoDB", "AI Chatbot", "WebSockets"],
     category: "Health & Wellness",
     logo: "/myndspark-logo.png",
@@ -36,7 +36,7 @@ const apps = [
   {
     id: 2,
     name: "LoyalAI",
-    description: "Relationship-focused loyalty assistant with real-time push/in-app notifications and an AI chatbot for relationships. Available on App Store.",
+    description: "Built a relationship-focused loyalty assistant with real-time push/in-app notifications and a custom GPT-4 integration, enabling the client to successfully deploy to the App Store.",
     technologies: ["React Native", "Firebase", "GPT-4", "Expo", "Native Modules"],
     category: "Social AI",
     logo: "/loyal-ai-logo.png",
@@ -55,7 +55,7 @@ const apps = [
   {
     id: 3,
     name: "FanGenie",
-    description: "Fan engagement platform with push notifications and Stripe Payment Sheet integration. Available on App Store.",
+    description: "Developed a robust fan engagement platform featuring secure Stripe Payment integration and highly reliable push notifications.",
     technologies: ["React Native", "Stripe", "Node.js", "Redis", "Push API"],
     category: "Entertainment",
     logo: "/fangenie-logo.jpg",
@@ -67,7 +67,7 @@ const apps = [
   {
     id: 4,
     name: "SplitMart",
-    description: "Educational marketplace platform for teaching, learning, and service selling. Features real-time chat and integrated payment.",
+    description: "Created a comprehensive educational marketplace with real-time chat and integrated payments, drastically reducing launch time for the founders.",
     technologies: ["React Native", "MongoDB", "Express", "Stripe", "Socket.io"],
     category: "Education",
     logo: "/splitmart-logo.png",
@@ -100,7 +100,7 @@ const Navbar = () => {
       <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#work" className="nav-link text-sm font-medium">Work</a>
       <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#about" className="nav-link text-sm font-medium">About</a>
       <a style={{ height: "100%", alignItems: "center", justifyContent: "center", display: "flex", paddingLeft: 15, paddingRight: 15 }} href="mailto:saadkhalil9999@gmail.com" className="px-5 py-2 bg-white text-black rounded-full text-sm font-bold hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-        Hire Me
+        Strategy Call
       </a>
     </motion.nav>
   );
@@ -160,7 +160,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-8xl font-black tracking-tight"
+            className="text-5xl md:text-7xl font-black tracking-tight"
           >
             Crafting <span style={{ paddingRight: 10 }} className="text-gradient-primary">Mobile</span><br />
             Experiences.
@@ -178,7 +178,7 @@ export default function Home() {
             }}
             className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
-            I&apos;m <span className="text-white font-bold text-3xl md:text-7xl leading-tight">Saad Khalil</span>, a Senior React Native Engineer specializing in high-performance cross-platform apps and AI integrations.
+            I&apos;m <span className="text-white font-bold text-3xl md:text-5xl leading-tight">Saad Khalil</span>. I help startups launch high-performance cross-platform apps in half the time.
           </motion.p>
 
           <motion.div
@@ -256,7 +256,7 @@ export default function Home() {
       <section style={{
         marginBottom: 60,
       }} id="work" className="py-32 px-6  mx-auto flex flex-col items-center">
-        <SectionHeading subtitle="Handcrafted mobile applications">Selected Projects</SectionHeading>
+        <SectionHeading subtitle="How I solved complex problems for my clients">Case Studies</SectionHeading>
         <div style={{
           marginTop: 40,
         }} className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch w-full max-w-7xl"
@@ -317,13 +317,13 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 blur-[100px]" />
 
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Let&apos;s build something <br />extraordinary.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Ready to launch in <br />half the time?</h2>
           <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-slate-400 text-xl max-w-2xl mx-auto">
-            Ready to bring your mobile app vision to life? Let&apos;s connect and discuss your next big project.
+            Book a Free 15-Minute Strategy Call and let's map out the perfect plan for your application.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="mailto:saadkhalil9999@gmail.com" className="bg-white text-black font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <Mail className="w-5 h-5" /> Message Me
+              <Mail className="w-5 h-5" /> Book a Strategy Call
             </a>
             <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="https://wa.me/923229953346" className="glass-panel font-bold hover:scale-105 transition-transform flex items-center gap-2">
               <MessageCircle className="w-5 h-5" /> WhatsApp
