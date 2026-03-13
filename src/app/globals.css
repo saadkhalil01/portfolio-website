@@ -11,6 +11,9 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-highlight: rgba(255, 255, 255, 0.1);
   --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  --neo-green: #56d39e;
+  --neo-border: #000000;
+  --neo-shadow: #000000;
 }
 
 @theme inline {
@@ -172,4 +175,66 @@ h6 {
 .badge:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+}
+
+/* Neobrutalist Styles */
+.neobrutalist-bg {
+  background-color: var(--neo-green);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+.btn-neo-black {
+  background-color: #121212;
+  color: white;
+  border: 2px solid var(--neo-border);
+  box-shadow: 4px 4px 0px 0px var(--neo-shadow);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 2rem;
+}
+
+.btn-neo-black:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--neo-shadow);
+}
+
+.btn-neo-black:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--neo-shadow);
+}
+
+.btn-neo-white {
+  background-color: white;
+  color: #121212;
+  border: 2px solid var(--neo-border);
+  box-shadow: 4px 4px 0px 0px var(--neo-shadow);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 2rem;
+}
+
+.btn-neo-white:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--neo-shadow);
+}
+
+.btn-neo-white:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--neo-shadow);
 }

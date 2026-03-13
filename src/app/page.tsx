@@ -93,13 +93,12 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      style={{ height: 40 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2.5 glass-panel rounded-full flex items-center gap-4 sm:gap-8 min-w-max"
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none flex items-center gap-4 sm:gap-8 min-w-max"
     >
-      <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#" className="nav-link text-sm font-medium">Home</a>
-      <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#work" className="nav-link text-sm font-medium">Work</a>
-      <a style={{ paddingLeft: 15, paddingRight: 15 }} href="#about" className="nav-link text-sm font-medium">About</a>
-      <a style={{ height: "100%", alignItems: "center", justifyContent: "center", display: "flex", paddingLeft: 15, paddingRight: 15 }} href="mailto:saadkhalil9999@gmail.com" className="px-5 py-2 bg-white text-black rounded-full text-sm font-bold hover:scale-105 transition-all shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+      <a href="#" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
+      <a href="#work" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Work</a>
+      <a href="#about" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">About</a>
+      <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black p-2 text-xs">
         Strategy Call
       </a>
     </motion.nav>
@@ -115,7 +114,7 @@ const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; sub
       style={{
         marginBottom: 10,
       }}
-      className="text-4xl md:text-5xl font-bold mb-4"
+      className="text-4xl md:text-5xl font-black mb-4 text-black uppercase tracking-tighter"
     >
       {children}
     </motion.h2>
@@ -125,7 +124,7 @@ const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; sub
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-slate-400 text-lg max-w-2xl mx-auto"
+        className="text-black/60 text-lg max-w-2xl mx-auto font-bold"
       >
         {subtitle}
       </motion.p>
@@ -145,7 +144,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+      <section className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden neobrutalist-bg">
         <motion.div
           style={{ y: backgroundY }}
           className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20"
@@ -160,9 +159,9 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black tracking-tight"
+            className="text-5xl md:text-7xl font-black tracking-tight text-black"
           >
-            Crafting <span style={{ paddingRight: 10 }} className="text-gradient-primary">Mobile</span><br />
+            Crafting <span style={{ paddingRight: 10 }} className="text-black">Mobile</span><br />
             Experiences.
           </motion.h1>
 
@@ -176,9 +175,9 @@ export default function Home() {
               marginTop: 40,
               marginBottom: 40,
             }}
-            className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed"
           >
-            I&apos;m <span className="text-white font-bold text-3xl md:text-5xl leading-tight">Saad Khalil</span>. I help startups launch high-performance cross-platform apps in half the time.
+            I&apos;m <span className="text-black font-extrabold text-3xl md:text-5xl leading-tight">Saad Khalil</span>. I help startups launch high-performance cross-platform apps in half the time.
           </motion.p>
 
           <motion.div
@@ -191,12 +190,12 @@ export default function Home() {
               style={{
                 padding: 20,
               }}
-              href="#work" className="h-14 px-8 bg-white text-black rounded-2xl font-bold flex items-center gap-2 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-              Explore My Work <ChevronDown className="w-5 h-5" />
+              href="#work" className="btn-neo-black rounded-none">
+              Explore My Work <ChevronDown className="w-5 h-5 ml-2" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="https://github.com/saadkhalil01" target="_blank" className="h-14 w-14 flex items-center justify-center glass-panel rounded-2xl hover:scale-110 hover:bg-white/10 transition-all border-white/10"><Github className="w-6 h-6" /></a>
-              <a href="https://www.linkedin.com/in/saad-khalil-0912b2232/" target="_blank" className="h-14 w-14 flex items-center justify-center glass-panel rounded-2xl hover:scale-110 hover:bg-white/10 transition-all border-white/10"><Linkedin className="w-6 h-6" /></a>
+              <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none"><Github className="w-6 h-6" /></a>
+              <a href="https://www.linkedin.com/in/saad-khalil-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none"><Linkedin className="w-6 h-6" /></a>
             </div>
           </motion.div>
         </div>
@@ -215,7 +214,7 @@ export default function Home() {
       {/* About / Expertise */}
       <section style={{
         marginBottom: 100,
-      }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center">
+      }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-y-4 border-black">
         <SectionHeading subtitle="Technical stack & specializations">Expertise</SectionHeading>
         <div style={{
           marginTop: 20,
@@ -226,24 +225,17 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              style={{
-                padding: 25,
-              }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-panel  rounded-[2.5rem] flex flex-col hover:bg-white/5 transition-colors border-white/5"
+              className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none flex flex-col p-8 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
-              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
-                <item.icon className="w-8 h-8 text-blue-400" />
+              <div className="w-16 h-16 bg-black border-2 border-black flex items-center justify-center mb-8">
+                <item.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 style={{
-                marginTop: 20,
-              }} className="text-2xl font-bold mb-6">{item.title}</h3>
-              <ul style={{
-                marginTop: 20,
-              }}>
+              <h3 className="text-2xl font-black mb-4 text-black uppercase tracking-tight">{item.title}</h3>
+              <ul className="space-y-3">
                 {item.items.map(tech => (
-                  <li key={tech} className="text-slate-400 text-base flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" /> {tech}
+                  <li key={tech} className="text-black/80 text-base flex items-center gap-3 font-bold">
+                    <div className="w-2 h-2 bg-black" /> {tech}
                   </li>
                 ))}
               </ul>
@@ -255,7 +247,7 @@ export default function Home() {
       {/* Portfolio Grid */}
       <section style={{
         marginBottom: 60,
-      }} id="work" className="py-32 px-6  mx-auto flex flex-col items-center">
+      }} id="work" className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
         <SectionHeading subtitle="How I solved complex problems for my clients">Case Studies</SectionHeading>
         <div style={{
           marginTop: 40,
@@ -268,33 +260,28 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              style={{
-                padding: 25,
-              }}
               onClick={() => setSelectedApp(app)}
-              className={`group relative overflow-hidden rounded-[3rem] glass-panel p-2 cursor-pointer glass-panel-hover flex flex-col h-full`}
+              className="group relative overflow-hidden bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 cursor-pointer flex flex-col h-full hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
-              <motion.div
-                style={{ marginBottom: 20 }}
-                whileHover={{ scale: 1.05 }}
-                className="relative z-10 w-40 h-40 md:w-56 md:h-56 rounded-[2.5rem] overflow-hidden shadow-2xl"
-              >
+              <div className="relative aspect-video w-full overflow-hidden border-b-4 border-black">
                 <Image
                   src={app.logo}
                   alt={app.name}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </motion.div>
-              <div className="p-10 flex items-center justify-between">
-                <div>
-                  <span style={{
-                    marginBottom: 10,
-                  }} className="text-blue-400 text-sm font-bold uppercase tracking-widest mb-3 block">{app.category}</span>
-                  <h3 className="text-4xl font-bold tracking-tight">{app.name}</h3>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-black text-white text-xs font-black uppercase tracking-widest px-4 py-2 border-2 border-black">
+                    {app.category}
+                  </span>
                 </div>
-                <div className="h-16 w-16 flex items-center justify-center rounded-[1.5rem] glass-panel group-hover:bg-white group-hover:text-black transition-all shadow-xl">
-                  <ArrowLeft className="w-8 h-8 rotate-180" />
+              </div>
+              <div className="p-8 flex items-center justify-between bg-white">
+                <div>
+                  <h3 className="text-3xl font-black tracking-tighter text-black uppercase">{app.name}</h3>
+                </div>
+                <div className="h-14 w-14 flex items-center justify-center bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-colors">
+                  <ArrowLeft className="w-4 h-4 rotate-180" />
                 </div>
               </div>
             </motion.div>
@@ -302,31 +289,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 neobrutalist-bg">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          style={{
-            padding: 50, alignSelf: "center", margin: "0 auto",
-            marginBottom: 20,
-            marginTop: 20
-          }}
-          className="mx-auto glass-panel p-16 rounded-[3rem] text-center space-y-8 relative overflow-hidden w-full max-w-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mx-auto text-center space-y-8 max-w-7xl"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px]" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 blur-[100px]" />
-
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Ready to launch in <br />half the time?</h2>
-          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-slate-400 text-xl max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to launch in <br />half the time?</h2>
+          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
             Book a Free 15-Minute Strategy Call and let's map out the perfect plan for your application.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="mailto:saadkhalil9999@gmail.com" className="bg-white text-black font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <Mail className="w-5 h-5" /> Book a Strategy Call
+          <div className="flex flex-wrap justify-center gap-6 pt-4">
+            <a style={{ minWidth: 200 }} href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none">
+              <Mail className="w-5 h-5 mr-2" /> Book a Strategy Call
             </a>
-            <a style={{ padding: '14px 36px', borderRadius: 100, minWidth: 180, justifyContent: 'center' }} href="https://wa.me/923229953346" className="glass-panel font-bold hover:scale-105 transition-transform flex items-center gap-2">
-              <MessageCircle className="w-5 h-5" /> WhatsApp
+            <a style={{ minWidth: 200 }} href="https://wa.me/923229953346" className="btn-neo-white rounded-none">
+              <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
             </a>
           </div>
         </motion.div>
@@ -344,18 +322,16 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl overflow-y-auto px-6 py-12"
+            className="fixed inset-0 z-[100] bg-[#56d39e]/95 overflow-y-auto px-6 py-12"
           >
-            <div style={{
-              padding: 50,
-            }} className="mx-auto">
+            <div className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-16 relative">
               <motion.button
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 onClick={() => setSelectedApp(null)}
-                className="mb-8 flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
+                className="mb-8 flex items-center gap-2 text-black font-black uppercase hover:translate-x-[-2px] transition-transform"
               >
-                <ArrowLeft className="w-5 h-5" /> Back to Work
+                <ArrowLeft className="w-6 h-6" /> Back to Work
               </motion.button>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -368,25 +344,25 @@ export default function Home() {
                     <Image src={selectedApp.logo} alt={selectedApp.name} width={96} height={96} className="object-cover" />
                   </div>
                   <div>
-                    <h2 style={{ textAlign: 'left', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-5xl font-black mb-4">{selectedApp.name}</h2>
-                    <p className="text-slate-400 text-xl leading-relaxed">{selectedApp.description}</p>
+                    <h2 className="text-5xl md:text-7xl font-black mb-6 text-black uppercase tracking-tighter">{selectedApp.name}</h2>
+                    <p className="text-black/80 text-xl leading-relaxed font-bold">{selectedApp.description}</p>
                   </div>
 
-                  <div style={{ marginTop: 10, marginBottom: 20 }} className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3">
                     {selectedApp.technologies.map(tech => (
-                      <span key={tech} className="badge">{tech}</span>
+                      <span key={tech} className="bg-black text-white px-3 py-1 text-xs font-black uppercase border-2 border-black">{tech}</span>
                     ))}
                   </div>
 
-                  <div style={{ marginTop: 10 }} className="flex flex-wrap gap-4 pt-4">
+                  <div className="flex flex-wrap gap-6 pt-8">
                     {selectedApp.links.appstore && (
-                      <a style={{ height: 30, paddingLeft: 10, paddingRight: 10, borderRadius: 100 }} href={selectedApp.links.appstore} target="_blank" className="px-6 py-3 bg-white text-black rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform">
-                        <Smartphone className="w-5 h-5" /> App Store
+                      <a href={selectedApp.links.appstore} target="_blank" className="btn-neo-black">
+                        <Smartphone className="w-6 h-6 mr-2" /> App Store
                       </a>
                     )}
                     {selectedApp.links.playstore && (
-                      <a style={{ height: 30, paddingLeft: 10, paddingRight: 10, borderRadius: 100 }} href={selectedApp.links.playstore} target="_blank" className="px-6 py-3 glass-panel rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform">
-                        <Globe className="w-5 h-5" /> Play Store
+                      <a href={selectedApp.links.playstore} target="_blank" className="btn-neo-white">
+                        <Globe className="w-6 h-6 mr-2" /> Play Store
                       </a>
                     )}
                   </div>
