@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
@@ -141,6 +141,15 @@ export default function Home() {
   const { scrollYProgress } = useScroll({ target: containerRef });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const [wordIndex, setWordIndex] = useState(0);
+  const words = ["Experiences", "Applications", "Solutions"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % words.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   return (
     <div ref={containerRef} className="relative min-h-screen">
@@ -165,7 +174,20 @@ export default function Home() {
             className="text-5xl md:text-7xl font-black tracking-tight text-black"
           >
             Crafting <span style={{ paddingRight: 10 }} className="text-black">Mobile</span><br />
-            Experiences.
+            <div className="relative h-[1.2em] flex justify-center items-center">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={words[wordIndex]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="text-white absolute whitespace-nowrap"
+                >
+                  {words[wordIndex]}.
+                </motion.span>
+              </AnimatePresence>
+            </div>
           </motion.h1>
 
           <motion.p
@@ -198,7 +220,7 @@ export default function Home() {
             </a>
             <div className="flex items-center gap-4">
               <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none"><Github className="w-6 h-6" /></a>
-              <a href="https://www.linkedin.com/in/saad-khalil-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none"><Linkedin className="w-6 h-6" /></a>
+              <a href="https://www.linkedin.com/in/muhammad-saad-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none"><Linkedin className="w-6 h-6" /></a>
             </div>
           </motion.div>
         </div>
@@ -274,13 +296,15 @@ export default function Home() {
             >
               <div className="relative aspect-video w-full overflow-hidden border-b-4 border-black">
 
-                <div style={{ backgroundColor: '#f4f4f4', marginTop: 60, marginLeft: 10, borderRadius: 50 }} className="relative w-70 h-70 flex-shrink-0 overflow-hidden">
-                  <Image
-                    src={app.logo}
-                    alt={app.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div style={{ paddingLeft: 15, paddingTop: 40 }} className="absolute inset-0 flex items-center pl-12 sm:pl-20">
+                  <div className="relative w-42 h-42 sm:w-44 sm:h-44 md:w-52 md:h-52 flex-shrink-0 overflow-hidden border-4 border-black bg-[#f4f4f4] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <Image
+                      src={app.logo}
+                      alt={app.name}
+                      fill
+                      className="object-cover p-1"
+                    />
+                  </div>
                 </div>
 
                 <div className="absolute top-4 left-4">
@@ -369,8 +393,8 @@ export default function Home() {
                   animate={{ y: 0, opacity: 1 }}
                   className="space-y-8"
                 >
-                  <div style={{ marginTop: 50 }} className="w-24 h-24 rounded-3xl overflow-hidden shadow-2xl">
-                    <Image src={selectedApp.logo} alt={selectedApp.name} width={96} height={96} className="object-cover" />
+                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-3xl overflow-hidden border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
+                    <Image src={selectedApp.logo} alt={selectedApp.name} fill className="object-cover p-2" />
                   </div>
                   <div
                     style={{
