@@ -92,10 +92,14 @@ const Navbar = () => {
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
+      style={{
+        paddingLeft: 20
+      }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none flex items-center gap-4 sm:gap-8 min-w-max"
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none flex items-center gap-4
+       sm:gap-8 min-w-max"
     >
-      <a href="#" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
+      <a href="#Home" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
       <a href="#work" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Work</a>
       <a href="#about" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">About</a>
       <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black p-2 text-xs">
@@ -213,7 +217,8 @@ export default function Home() {
 
       {/* About / Expertise */}
       <section style={{
-        marginBottom: 100,
+        paddingBottom: 100,
+        paddingTop: 70,
       }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-y-4 border-black">
         <SectionHeading subtitle="Technical stack & specializations">Expertise</SectionHeading>
         <div style={{
@@ -226,6 +231,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
+              style={{
+                paddingLeft: 20,
+                paddingTop: 10
+              }}
               className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none flex flex-col p-8 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               <div className="w-16 h-16 bg-black border-2 border-black flex items-center justify-center mb-8">
@@ -246,7 +255,8 @@ export default function Home() {
 
       {/* Portfolio Grid */}
       <section style={{
-        marginBottom: 60,
+        paddingBottom: 100,
+        paddingTop: 70,
       }} id="work" className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
         <SectionHeading subtitle="How I solved complex problems for my clients">Case Studies</SectionHeading>
         <div style={{
@@ -264,12 +274,15 @@ export default function Home() {
               className="group relative overflow-hidden bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 cursor-pointer flex flex-col h-full hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               <div className="relative aspect-video w-full overflow-hidden border-b-4 border-black">
-                <Image
-                  src={app.logo}
-                  alt={app.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <div>
+                  <Image
+                    src={app.logo}
+                    alt={app.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
                 <div className="absolute top-4 left-4">
                   <span className="bg-black text-white text-xs font-black uppercase tracking-widest px-4 py-2 border-2 border-black">
                     {app.category}
