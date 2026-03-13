@@ -14,8 +14,7 @@ import {
   Zap,
   Cpu,
   Globe,
-  Star,
-  Layers
+  Star
 } from 'lucide-react';
 
 // --- Data ---
@@ -319,7 +318,7 @@ export default function Home() {
         >
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to launch in <br />half the time?</h2>
           <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
-            Book a Free 15-Minute Strategy Call and let's map out the perfect plan for your application.
+            Book a Free 15-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
           </p>
           <div className="flex flex-wrap justify-center gap-6 pt-4">
             <a style={{ minWidth: 200 }} href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none">
