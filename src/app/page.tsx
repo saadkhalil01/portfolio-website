@@ -274,23 +274,28 @@ export default function Home() {
               className="group relative overflow-hidden bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 cursor-pointer flex flex-col h-full hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               <div className="relative aspect-video w-full overflow-hidden border-b-4 border-black">
-                <div>
+
+                <div style={{ backgroundColor: '#f4f4f4', marginTop: 60, marginLeft: 10, borderRadius: 50 }} className="relative w-70 h-70 flex-shrink-0 overflow-hidden">
                   <Image
                     src={app.logo}
                     alt={app.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover"
                   />
                 </div>
 
                 <div className="absolute top-4 left-4">
-                  <span className="bg-black text-white text-xs font-black uppercase tracking-widest px-4 py-2 border-2 border-black">
+                  <span style={{
+                    padding: 10
+                  }} className="bg-black text-white text-xs font-black uppercase tracking-widest px-4 py-2 border-2 border-black">
                     {app.category}
                   </span>
                 </div>
               </div>
               <div className="p-8 flex items-center justify-between bg-white">
-                <div>
+                <div style={{
+                  paddingLeft: 10
+                }}>
                   <h3 className="text-3xl font-black tracking-tighter text-black uppercase">{app.name}</h3>
                 </div>
                 <div className="h-14 w-14 flex items-center justify-center bg-black text-white hover:bg-white hover:text-black border-2 border-black transition-colors">
@@ -304,9 +309,13 @@ export default function Home() {
 
       <section className="py-32 px-6 neobrutalist-bg">
         <motion.div
+          style={{
+            paddingBottom: 100,
+            paddingTop: 70,
+          }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="mx-auto text-center space-y-8 max-w-7xl"
+          className="mx-auto text-center space-y-8 max-w-8xl"
         >
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to launch in <br />half the time?</h2>
           <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
@@ -332,12 +341,20 @@ export default function Home() {
       <AnimatePresence>
         {selectedApp && (
           <motion.div
+
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-[#56d39e]/95 overflow-y-auto px-6 py-12"
           >
-            <div className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-16 relative">
+            <div
+              style={{
+                paddingBottom: 100,
+                paddingTop: 40,
+                paddingLeft: 50,
+                paddingRight: 10,
+              }}
+              className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-16 relative">
               <motion.button
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -356,18 +373,32 @@ export default function Home() {
                   <div style={{ marginTop: 50 }} className="w-24 h-24 rounded-3xl overflow-hidden shadow-2xl">
                     <Image src={selectedApp.logo} alt={selectedApp.name} width={96} height={96} className="object-cover" />
                   </div>
-                  <div>
+                  <div
+                    style={{
+                      marginTop: 20,
+                    }}>
                     <h2 className="text-5xl md:text-7xl font-black mb-6 text-black uppercase tracking-tighter">{selectedApp.name}</h2>
-                    <p className="text-black/80 text-xl leading-relaxed font-bold">{selectedApp.description}</p>
+                    <p
+                      style={{
+                        marginTop: 20,
+                      }} className="text-black/80 text-xl leading-relaxed font-bold">{selectedApp.description}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div
+                    style={{
+                      marginTop: 20,
+                    }} className="flex flex-wrap gap-3">
                     {selectedApp.technologies.map(tech => (
-                      <span key={tech} className="bg-black text-white px-3 py-1 text-xs font-black uppercase border-2 border-black">{tech}</span>
+                      <span
+                        style={{
+                          padding: 5,
+                        }} key={tech} className="bg-black text-white px-3 py-1 text-xs font-black uppercase border-2 border-black">{tech}</span>
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-6 pt-8">
+                  <div style={{
+                    marginTop: 20,
+                  }} className="flex flex-wrap gap-6 pt-8">
                     {selectedApp.links.appstore && (
                       <a href={selectedApp.links.appstore} target="_blank" className="btn-neo-black">
                         <Smartphone className="w-6 h-6 mr-2" /> App Store
