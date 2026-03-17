@@ -16,7 +16,35 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Muhammad Saad - React Native Developer",
-  description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience",
+  description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience building high-performance cross-platform apps.",
+  keywords: [
+    "Muhammad Saad",
+    "Saad Khalil",
+    "React Native Developer",
+    "Mobile App Developer",
+    "iOS Developer",
+    "Android Developer",
+    "Expo Expert",
+    "Freelance Developer",
+    "Next.js Portfolio",
+    "Startup Developer",
+    "Cross-platform Apps",
+    "Stripe Integration",
+    "Firebase",
+    "Node.js",
+    "MongoDB"
+  ],
+  authors: [{ name: "Muhammad Saad", url: "https://saadkhalil.dev" }],
+  creator: "Muhammad Saad",
+  publisher: "Muhammad Saad",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "https://saadkhalil.dev",
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -33,7 +61,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Muhammad Saad - React Native Developer",
-    description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience",
+    description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience building high-performance cross-platform apps.",
     url: "https://saadkhalil.dev",
     siteName: "Saad Khalil Portfolio",
     images: [
@@ -50,7 +78,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Saad - React Native Developer",
-    description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience",
+    description: "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience building high-performance cross-platform apps.",
     images: ["/android-chrome-512x512.png"],
   },
   robots: {
@@ -64,6 +92,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -75,6 +104,29 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${inter.variable}`}>
       <head>
         <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#f5f5dc" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Muhammad Saad",
+              "url": "https://saadkhalil.dev",
+              "image": "https://saadkhalil.dev/android-chrome-512x512.png",
+              "sameAs": [
+                "https://github.com/saadkhalil01",
+                "https://www.linkedin.com/in/muhammad-saad-0912b2232/"
+              ],
+              "jobTitle": "React Native Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Freelance"
+              },
+              "description": "Portfolio of Muhammad Saad - React Native Developer with 2.5+ years experience building high-performance cross-platform apps."
+            })
+          }}
+        />
       </head>
       <body className="antialiased">
         <div className="mesh-background" />

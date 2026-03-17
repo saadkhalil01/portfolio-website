@@ -101,7 +101,7 @@ const Navbar = () => {
       <a href="#Home" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
       <a href="#work" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Work</a>
       <a href="#about" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">About</a>
-      <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black p-2 text-xs">
+      <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black p-2 text-xs" aria-label="Book a strategy call">
         Strategy Call
       </a>
     </motion.nav>
@@ -219,8 +219,8 @@ export default function Home() {
               Explore My Work <ChevronDown className="w-5 h-5 ml-2" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none"><Github className="w-6 h-6" /></a>
-              <a href="https://www.linkedin.com/in/muhammad-saad-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none"><Linkedin className="w-6 h-6" /></a>
+              <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View GitHub Profile"><Github className="w-6 h-6" /></a>
+              <a href="https://www.linkedin.com/in/muhammad-saad-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View LinkedIn Profile"><Linkedin className="w-6 h-6" /></a>
             </div>
           </motion.div>
         </div>
