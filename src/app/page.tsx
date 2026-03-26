@@ -14,8 +14,10 @@ import {
   Zap,
   Cpu,
   Globe,
-  Star
+  Star,
 } from 'lucide-react';
+import { SiWhatsapp, SiGmail } from 'react-icons/si';
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 // --- Data ---
 const apps = [
@@ -85,6 +87,45 @@ const expertise = [
   { icon: Star, title: "Fintech", items: ["Stripe", "RevenueCat", "In-App Purchases"] },
 ];
 
+const reviews = [
+  {
+    name: "Myuran HasarangaNathan",
+    role: "Founder, MyndSpark",
+    location: "Sri Lanka",
+    content: "Saad's ability to turn complex AI requirements into a smooth mobile experience is unmatched. We launched ahead of schedule thanks to his expertise.",
+    rating: 5
+  },
+  {
+    name: "Michael Thompson",
+    role: "CTO, LoyalAI",
+    location: "USA",
+    content: "Working with Saad was a game-changer. His deep knowledge of React Native and AI integration helped us build a truly premium application.",
+    rating: 4.5
+  },
+  {
+    name: "Daniel Rodriguez",
+    role: "CTO, TechSolutions",
+    location: "USA",
+    content: "Saad's bug-fixing expertise saved our launch. He identified and resolved critical performance bottlenecks that others missed.",
+    rating: 4.5
+  },
+  {
+    name: "Emily Watson",
+    role: "Founder, SpeedFlow",
+    location: "UK",
+    content: "The app performance improved by 40% after Saad's optimization. His deep understanding of React Native internals is truly impressive.",
+    rating: 5
+  },
+  {
+    name: "Sarah J. Stevens",
+    role: "Founder, SplitMart",
+    location: "Germany",
+    content: "Reliable, fast, and incredibly skilled. Saad doesn't just write code; he understands the business goals and delivers accordingly.",
+    rating: 5
+  },
+];
+
+
 // --- Components ---
 
 const Navbar = () => {
@@ -135,6 +176,42 @@ const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; sub
   </div>
 );
 
+const ReviewCard = ({ name, role, content, rating }: typeof reviews[0]) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    style={{ padding: 10 }}
+    className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 flex flex-col gap-6 min-w-[350px] md:min-w-[450px]"
+  >
+    <div className="flex gap-1 text-yellow-400">
+      {[...Array(5)].map((_, i) => {
+        const starIndex = i + 1;
+        if (starIndex <= Math.floor(rating)) {
+          return <FaStar key={i} className="w-5 h-5 fill-current" />;
+        } else if (starIndex === Math.ceil(rating) && !Number.isInteger(rating)) {
+          return <FaStarHalfAlt key={i} className="w-5 h-5 fill-current" />;
+        } else {
+          return <FaRegStar key={i} className="w-5 h-5" />;
+        }
+      })}
+    </div>
+    <p className="text-black font-bold italic leading-relaxed">"{content}"</p>
+    <div className="flex justify-between items-end">
+      <div>
+        <h4 className="font-black text-black uppercase tracking-tight">{name}</h4>
+        <p className="text-black/60 text-sm font-bold uppercase">{role}</p>
+      </div>
+      {(reviews.find(r => r.name === name) as any)?.location && (
+        <span className="text-black/40 text-[10px] font-black uppercase px-1.5 py-0.5">
+          {(reviews.find(r => r.name === name) as any)?.location}
+        </span>
+      )}
+    </div>
+  </motion.div>
+);
+
+
 export default function Home() {
   const [selectedApp, setSelectedApp] = useState<typeof apps[0] | null>(null);
   const containerRef = useRef(null);
@@ -147,7 +224,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 1000);
     return () => clearInterval(interval);
   }, [words.length]);
 
@@ -330,6 +407,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section
+        style={{
+          paddingBottom: 100,
+          paddingTop: 70,
+        }}
+        className="py-32 px-6 neobrutalist-bg border-b-4 border-black overflow-hidden">
+        <SectionHeading subtitle="What my partners and clients say about our collaboration">Client Feedback</SectionHeading>
+
+        <div className="relative mt-12 flex">
+          <motion.div
+            style={{
+              paddingTop: 40,
+            }}
+            animate={{
+              x: [0, "-50%"],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear",
+              },
+            }}
+            className="flex gap-8"
+          >
+            {[...reviews, ...reviews].map((review, idx) => (
+              <div key={idx} className="whitespace-normal">
+                <ReviewCard {...review} />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-32 px-6 neobrutalist-bg">
         <motion.div
           style={{
@@ -340,16 +453,16 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           className="mx-auto text-center space-y-8 max-w-8xl"
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to launch in <br />half the time?</h2>
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to <span className="text-white">Launch</span> in <br />half the time?</h2>
           <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
-            Book a Free 15-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
+            Book a Free 30-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
           </p>
           <div className="flex flex-wrap justify-center gap-6 pt-4">
             <a style={{ minWidth: 200 }} href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none">
-              <Mail className="w-5 h-5 mr-2" /> Book a Strategy Call
+              <SiGmail style={{ marginRight: 5 }} className="w-5 h-5 mr-4" /> Book a Strategy Call
             </a>
             <a style={{ minWidth: 200 }} href="https://wa.me/923229953346" className="btn-neo-white rounded-none">
-              <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
+              <SiWhatsapp style={{ marginRight: 5 }} className="w-5 h-5 mr-4" /> WhatsApp
             </a>
           </div>
         </motion.div>
