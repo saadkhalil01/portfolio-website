@@ -116,7 +116,7 @@ export default function RootLayout({
               "image": "https://saadkhalil.dev/android-chrome-512x512.png",
               "sameAs": [
                 "https://github.com/saadkhalil01",
-                "https://www.linkedin.com/in/muhammad-saad-0912b2232/"
+                "https://www.linkedin.com/in/saad-khalil-0912b2232/"
               ],
               "jobTitle": "React Native Developer",
               "worksFor": {

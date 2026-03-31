@@ -58,4 +58,4 @@ npm run lint     # Run ESLint
 - Email: `saadkhalil9999@gmail.com`
 - WhatsApp: `+923229953346`
 - GitHub: `https://github.com/saadkhalil01`
-- LinkedIn: `https://www.linkedin.com/in/muhammad-saad-0912b2232/`
+- LinkedIn: `https://www.linkedin.com/in/saad-khalil-0912b2232/`

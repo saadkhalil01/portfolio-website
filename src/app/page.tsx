@@ -381,7 +381,7 @@ export default function Home() {
             </a>
             <div className="flex items-center gap-4">
               <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View GitHub Profile"><FaGithub className="w-6 h-6" /></a>
-              <a href="https://www.linkedin.com/in/muhammad-saad-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View LinkedIn Profile"><FaLinkedin className="w-6 h-6" /></a>
+              <a href="https://www.linkedin.com/in/saad-khalil-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View LinkedIn Profile"><FaLinkedin className="w-6 h-6" /></a>
             </div>
           </motion.div>
         </div>
