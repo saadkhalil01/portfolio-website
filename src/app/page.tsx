@@ -10,6 +10,7 @@ import {
   Zap,
   Cpu,
   Star,
+  Check,
 } from 'lucide-react';
 import { SiWhatsapp, SiGmail } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaAppStoreIos, FaGooglePlay } from 'react-icons/fa';
@@ -145,6 +146,69 @@ const reviews = [
 ];
 
 
+const pricingPlans = [
+  {
+    name: "Starter",
+    tagline: "Ship your MVP fast",
+    price: "$2999",
+    period: "one-time",
+    highlight: false,
+    badge: null,
+    description: "Perfect for founders who need a focused, production-ready mobile app to validate their idea.",
+    features: [
+      "1 platform (iOS or Android)",
+      "Up to 5 core screens",
+      "Auth + basic backend",
+      "Push notifications",
+      "App Store submission",
+      "2 weeks of post-launch support",
+    ],
+    cta: "Get Started",
+    ctaHref: "mailto:saadkhalil9999@gmail.com?subject=Starter Plan",
+  },
+  {
+    name: "Growth",
+    tagline: "The full product, done right",
+    price: "$9999",
+    period: "one-time",
+    highlight: true,
+    badge: "Most Popular",
+    description: "For startups ready to launch a polished cross-platform app with payments and AI integration.",
+    features: [
+      "iOS + Android (React Native)",
+      "Unlimited screens",
+      "AI / GPT integration",
+      "Stripe / RevenueCat payments",
+      "Real-time features (WebSockets)",
+      "App Store + Play Store submission",
+      "4 weeks of post-launch support",
+      "Full code handoff + documentation",
+    ],
+    cta: "Book a Call",
+    ctaHref: "mailto:saadkhalil9999@gmail.com?subject=Growth Plan",
+  },
+  {
+    name: "Scale",
+    tagline: "Dedicated engineering partner",
+    price: "$4999",
+    period: "/ month",
+    highlight: false,
+    badge: "Retainer",
+    description: "Ongoing development, feature sprints, and technical leadership — your app keeps growing.",
+    features: [
+      "Everything in Growth",
+      "Dedicated 40 hrs/month",
+      "Weekly sprint demos",
+      "Architecture consulting",
+      "Performance optimization",
+      "Priority Slack support",
+      "Cancel anytime",
+    ],
+    cta: "Let's Talk",
+    ctaHref: "https://wa.me/923229953346",
+  },
+];
+
 // --- Components ---
 
 const Navbar = () => {
@@ -161,6 +225,7 @@ const Navbar = () => {
       <a href="#Home" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
       <a href="#work" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Work</a>
       <a href="#about" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">About</a>
+      <a href="#pricing" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Pricing</a>
       <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black p-2 text-xs" aria-label="Book a strategy call">
         Strategy Call
       </a>
@@ -446,6 +511,69 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
+        <SectionHeading subtitle="Transparent pricing for every stage of your journey">Pricing Plans</SectionHeading>
+        <div style={{ marginTop: 40 }} className="grid grid-cols-1 md:grid-cols-3 gap-0 w-full max-w-6xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          {pricingPlans.map((plan, idx) => (
+            <motion.div
+              key={plan.name}
+              style={{
+                padding: 30
+              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className={`relative flex flex-col p-12 ${plan.highlight ? 'bg-black text-white' : 'bg-white text-black'} ${idx < pricingPlans.length - 1 ? 'border-r-4 border-black' : ''}`}
+            >
+              {plan.badge && (
+                <span className={`absolute top-6 right-6 text-[10px] font-black uppercase tracking-widest px-3 py-1 border-2 ${plan.highlight ? 'bg-white text-black border-white' : 'bg-black text-white border-black'}`}>
+                  {plan.badge}
+                </span>
+              )}
+
+              <div style={{marginTop: 10,marginBottom: 10}} className="mb-6">
+                <h3 className={`text-2xl font-black uppercase tracking-tight mb-1 ${plan.highlight ? 'text-white' : 'text-black'}`}>{plan.name}</h3>
+                <p className={`text-sm font-bold ${plan.highlight ? 'text-white/60' : 'text-black/50'}`}>{plan.tagline}</p>
+              </div>
+
+              <div className="mb-6 flex items-end gap-1">
+                <span className={`text-5xl font-black tracking-tighter ${plan.highlight ? 'text-white' : 'text-black'}`}>{plan.price}</span>
+                <span className={`text-sm font-bold mb-2 ${plan.highlight ? 'text-white/60' : 'text-black/50'}`}>{plan.period}</span>
+              </div>
+
+              <p style={{marginTop: 15,marginBottom: 15}} className={`text-sm font-bold leading-relaxed mb-8 ${plan.highlight ? 'text-white/70' : 'text-black/60'}`}>{plan.description}</p>
+
+              <ul className="flex flex-col gap-3 mb-10 flex-1">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <div className={`mt-0.5 w-5 h-5 flex-shrink-0 flex items-center justify-center border-2 ${plan.highlight ? 'bg-white border-white' : 'bg-black border-black'}`}>
+                      <Check className={`w-3 h-3 ${plan.highlight ? 'text-black' : 'text-white'}`} />
+                    </div>
+                    <span className={`text-sm font-bold ${plan.highlight ? 'text-white/80' : 'text-black/80'}`}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+              style={{
+                marginTop: 20,
+                padding: 10,
+              }}
+                href={plan.ctaHref}
+                target={plan.ctaHref.startsWith('http') ? '_blank' : undefined}
+                rel={plan.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={`block text-center py-4 font-black uppercase tracking-widest text-sm border-2 transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] ${plan.highlight ? 'bg-white text-black border-white hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]' : 'bg-black text-white border-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]'}`}
+              >
+                {plan.cta}
+              </a>
+            </motion.div>
+          ))}
+        </div>
+        <p style={{ marginTop: 24 }} className="text-black/50 text-sm font-bold text-center">All plans include a free 30-min discovery call &mdash; no commitment needed.</p>
       </section>
 
       {/* Reviews Section */}
