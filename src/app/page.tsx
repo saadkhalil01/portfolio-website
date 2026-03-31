@@ -219,10 +219,10 @@ const Navbar = () => {
         paddingLeft: 20
       }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none flex items-center gap-4
-       sm:gap-8 min-w-max"
+      className="fixed top-0 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none flex items-center gap-3
+       sm:gap-8"
     >
-      <a href="#Home" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
+      <a style={{}} href="#Home" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
       <a href="#work" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Work</a>
       <a href="#about" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">About</a>
       <a href="#pricing" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Pricing</a>
