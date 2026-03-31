@@ -4,19 +4,15 @@ import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
-  Github,
-  Linkedin,
   ChevronDown,
   ArrowLeft,
   Smartphone,
-  Mail,
-  MessageCircle,
   Zap,
   Cpu,
-  Globe,
   Star,
 } from 'lucide-react';
 import { SiWhatsapp, SiGmail } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaAppStoreIos, FaGooglePlay } from 'react-icons/fa';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 // --- Data ---
@@ -81,10 +77,33 @@ const apps = [
 ];
 
 const expertise = [
-  { icon: Smartphone, title: "Mobile", items: ["React Native", "Expo", "Native Modules"] },
+  { icon: Smartphone, title: "iOS & Mobile", items: ["React Native", "SwiftUI", "Expo", "Native Modules"] },
   { icon: Cpu, title: "Backend", items: ["Node.js", "Express", "MongoDB", "Firebase"] },
   { icon: Zap, title: "AI/Real-time", items: ["AI Integration", "WebSockets", "Push Notification"] },
   { icon: Star, title: "Fintech", items: ["Stripe", "RevenueCat", "In-App Purchases"] },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Discovery Call",
+    description: "We align on your goals, target users, and timeline in 30 minutes. I ask the hard questions upfront so there are no surprises later.",
+  },
+  {
+    number: "02",
+    title: "Architecture & Plan",
+    description: "I map out the full tech stack, sprint milestones, and any technical risks — before a single line of code is written.",
+  },
+  {
+    number: "03",
+    title: "Sprint Development",
+    description: "Rapid two-week sprints with live demos after each one. You always know exactly where your app stands.",
+  },
+  {
+    number: "04",
+    title: "Launch & Handoff",
+    description: "App Store submission, production deployment, and full code handoff with documentation. You own everything.",
+  },
 ];
 
 const reviews = [
@@ -196,15 +215,15 @@ const ReviewCard = ({ name, role, content, rating }: typeof reviews[0]) => (
         }
       })}
     </div>
-    <p className="text-black font-bold italic leading-relaxed">"{content}"</p>
+    <p className="text-black font-bold italic leading-relaxed">&quot;{content}&quot;</p>
     <div className="flex justify-between items-end">
       <div>
         <h4 className="font-black text-black uppercase tracking-tight">{name}</h4>
         <p className="text-black/60 text-sm font-bold uppercase">{role}</p>
       </div>
-      {(reviews.find(r => r.name === name) as any)?.location && (
+      {reviews.find(r => r.name === name)?.location && (
         <span className="text-black/40 text-[10px] font-black uppercase px-1.5 py-0.5">
-          {(reviews.find(r => r.name === name) as any)?.location}
+          {reviews.find(r => r.name === name)?.location}
         </span>
       )}
     </div>
@@ -296,8 +315,8 @@ export default function Home() {
               Explore My Work <ChevronDown className="w-5 h-5 ml-2" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View GitHub Profile"><Github className="w-6 h-6" /></a>
-              <a href="https://www.linkedin.com/in/muhammad-saad-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View LinkedIn Profile"><Linkedin className="w-6 h-6" /></a>
+              <a href="https://github.com/saadkhalil01" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View GitHub Profile"><FaGithub className="w-6 h-6" /></a>
+              <a href="https://www.linkedin.com/in/muhammad-saad-0912b2232/" target="_blank" className="btn-neo-white p-4 rounded-none" aria-label="View LinkedIn Profile"><FaLinkedin className="w-6 h-6" /></a>
             </div>
           </motion.div>
         </div>
@@ -407,6 +426,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
+        <SectionHeading subtitle="From first call to App Store — here's exactly how we work together">How It Works</SectionHeading>
+        <div style={{ marginTop: 40 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-7xl">
+          {processSteps.map((step, idx) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              style={{ padding: 30 }}
+              className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-4 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all"
+            >
+              <span className="text-6xl font-black text-black/10 leading-none">{step.number}</span>
+              <h3 className="text-xl font-black text-black uppercase tracking-tight">{step.title}</h3>
+              <p className="text-black/70 font-bold leading-relaxed text-sm">{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Reviews Section */}
       <section
         style={{
@@ -470,7 +511,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-900 text-center text-slate-500">
-        <p>© 2024 Muhammad Saad. Developed with React & Framer Motion.</p>
+        <p>© 2025 Muhammad Saad. Developed with React & Framer Motion.</p>
       </footer>
 
       {/* App Details Overlay */}
@@ -492,6 +533,9 @@ export default function Home() {
               }}
               className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-16 relative">
               <motion.button
+              style={{
+                marginBottom: 20,
+              }}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 onClick={() => setSelectedApp(null)}
@@ -537,12 +581,12 @@ export default function Home() {
                   }} className="flex flex-wrap gap-6 pt-8">
                     {selectedApp.links.appstore && (
                       <a href={selectedApp.links.appstore} target="_blank" className="btn-neo-black">
-                        <Smartphone className="w-6 h-6 mr-2" /> App Store
+                        <FaAppStoreIos style={{ marginRight: 5 }} className="w-6 h-6 mr-2" /> App Store
                       </a>
                     )}
                     {selectedApp.links.playstore && (
                       <a href={selectedApp.links.playstore} target="_blank" className="btn-neo-white">
-                        <Globe className="w-6 h-6 mr-2" /> Play Store
+                        <FaGooglePlay style={{ marginRight: 5 }} className="w-6 h-6 mr-2" /> Play Store
                       </a>
                     )}
                   </div>
