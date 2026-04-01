@@ -150,7 +150,7 @@ const pricingPlans = [
   {
     name: "Starter",
     tagline: "Ship your MVP fast",
-    price: "$2999",
+    price: "$999",
     period: "one-time",
     highlight: false,
     badge: null,
@@ -169,7 +169,7 @@ const pricingPlans = [
   {
     name: "Growth",
     tagline: "The full product, done right",
-    price: "$9999",
+    price: "$2999",
     period: "one-time",
     highlight: true,
     badge: "Most Popular",
@@ -190,7 +190,7 @@ const pricingPlans = [
   {
     name: "Scale",
     tagline: "Dedicated engineering partner",
-    price: "$4999",
+    price: "$1999",
     period: "/ month",
     highlight: false,
     badge: "Retainer",
@@ -322,8 +322,8 @@ export default function Home() {
           style={{ y: backgroundY }}
           className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20"
         >
-          <div className="w-[800px] h-[800px] border border-blue-500/20 rounded-full animate-pulse" />
-          <div className="absolute w-[600px] h-[600px] border border-purple-500/20 rounded-full animate-pulse delay-500" />
+          <div className="w-[800px] h-[800px] border border-orange-500/20 rounded-full animate-pulse" />
+          <div className="absolute w-[600px] h-[600px] border border-orange-400/20 rounded-full animate-pulse delay-500" />
         </motion.div>
 
         <div className="relative z-10 text-center space-y-8 max-w-4xl">
@@ -650,7 +650,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-[#56d39e]/95 overflow-y-auto px-6 py-12"
+            className="fixed inset-0 z-[100] bg-[#ff6a00]/95 overflow-y-auto px-6 py-12"
           >
             <div
               style={{

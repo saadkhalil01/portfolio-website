@@ -3,15 +3,15 @@
 :root {
   --background: #030712;
   --foreground: #f9fafb;
-  --primary: #3b82f6;
-  --primary-glow: rgba(59, 130, 246, 0.5);
-  --secondary: #8b5cf6;
-  --accent: #f472b6;
+  --primary: #ff6a00;
+  --primary-glow: rgba(255, 106, 0, 0.5);
+  --secondary: #ff9a3c;
+  --accent: #ffb347;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-highlight: rgba(255, 255, 255, 0.1);
   --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-  --neo-green: #56d39e;
+  --neo-orange: #ff7900;
   --neo-border: #000000;
   --neo-shadow: #000000;
 }
@@ -63,14 +63,14 @@ h6 {
   z-index: -1;
   background-color: var(--background);
   background-image:
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(255, 106, 0, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 154, 60, 0.15) 0px, transparent 50%),
     radial-gradient(
       at 100% 100%,
-      rgba(244, 114, 182, 0.1) 0px,
+      rgba(255, 179, 71, 0.1) 0px,
       transparent 50%
     ),
-    radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+    radial-gradient(at 0% 100%, rgba(255, 106, 0, 0.1) 0px, transparent 50%);
   filter: blur(80px);
 }
 
@@ -103,7 +103,7 @@ h6 {
 }
 
 .text-gradient-primary {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, #ff6a00 0%, #ffb347 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -122,7 +122,7 @@ h6 {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--primary);
+  background-color: var(--neo-orange);
   transition: width 0.3s ease;
 }
 
@@ -151,7 +151,7 @@ h6 {
 
 /* Selection */
 ::selection {
-  background-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(255, 106, 0, 0.35);
   color: #fff;
 }
 
@@ -179,11 +179,11 @@ h6 {
 
 /* Neobrutalist Styles */
 .neobrutalist-bg {
-  background-color: var(--neo-green);
+  background-color: var(--neo-orange);
   background-image: repeating-linear-gradient(
     45deg,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.1) 1px,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.08) 1px,
     transparent 1px,
     transparent 4px
   );
