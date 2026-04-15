@@ -11,6 +11,8 @@ import {
   Cpu,
   Star,
   Check,
+  Menu,
+  X,
 } from 'lucide-react';
 import { SiWhatsapp, SiGmail } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaAppStoreIos, FaGooglePlay } from 'react-icons/fa';
@@ -193,7 +195,7 @@ const pricingPlans = [
     price: "$1999",
     period: "/ month",
     highlight: false,
-    badge: "Retainer",
+    badge: "Best Value",
     description: "Ongoing development, feature sprints, and technical leadership — your app keeps growing.",
     features: [
       "Everything in Growth",
@@ -212,24 +214,81 @@ const pricingPlans = [
 // --- Components ---
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const links = [
+    { href: '#Home', label: 'Home' },
+    { href: '#work', label: 'Work' },
+    { href: '#about', label: 'About' },
+    // { href: '#pricing', label: 'Pricing' }, // temporarily hidden
+  ];
+
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      style={{
-        paddingLeft: 20
-      }}
-      animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none flex items-center gap-3
-       sm:gap-8"
-    >
-      <a style={{}} href="#Home" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Home</a>
-      <a href="#work" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Work</a>
-      <a href="#about" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">About</a>
-      <a href="#pricing" className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">Pricing</a>
-      <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black p-2 text-xs" aria-label="Book a strategy call">
-        Strategy Call
-      </a>
-    </motion.nav>
+    <>
+      {/* Desktop: centered pill */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        style={{ paddingLeft: 24, paddingRight: 0 }}
+        className="hidden sm:flex fixed top-0 left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] items-center gap-6"
+      >
+        {links.map(l => (
+          <a key={l.href} href={l.href} className="text-black text-sm font-black uppercase hover:underline decoration-2 underline-offset-4">{l.label}</a>
+        ))}
+        <a href="mailto:saadkhalil9999@gmail.com" style={{ padding: '8px 14px' }} className="btn-neo-black text-xs whitespace-nowrap">
+          Strategy Call
+        </a>
+      </motion.nav>
+
+      {/* Mobile: hamburger button — plain div owns positioning so Framer Motion can't eat right/top */}
+      <div style={{ position: 'fixed', top: 12, right: 12, zIndex: 50 }} className="sm:hidden">
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
+          <button
+            onClick={() => setIsOpen(o => !o)}
+            aria-label="Toggle menu"
+            style={{ width: 44, height: 44 }}
+            className="flex items-center justify-center border-2 border-black bg-white text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </motion.div>
+      </div>
+
+      {/* Mobile dropdown menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <div style={{ position: 'fixed', top: 68, right: 12, zIndex: 40 }} className="sm:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15 }}
+            className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            style={{ minWidth: 200 }}
+          >
+            {links.map(l => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setIsOpen(false)}
+                style={{ paddingLeft: 20, paddingTop: 16, paddingBottom: 16 }}
+                className="block text-black font-black uppercase text-sm border-b-2 border-black hover:bg-black hover:text-white transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="mailto:saadkhalil9999@gmail.com"
+              onClick={() => setIsOpen(false)}
+              style={{ paddingLeft: 20, paddingTop: 16, paddingBottom: 16 }}
+              className="block bg-black text-white font-black uppercase text-sm tracking-widest"
+            >
+              Strategy Call →
+            </a>
+          </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
@@ -266,7 +325,7 @@ const ReviewCard = ({ name, role, content, rating }: typeof reviews[0]) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     style={{ padding: 10 }}
-    className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 flex flex-col gap-6 min-w-[350px] md:min-w-[450px]"
+    className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 flex flex-col gap-6 min-w-[280px] sm:min-w-[350px] md:min-w-[450px]"
   >
     <div className="flex gap-1 text-yellow-400">
       {[...Array(5)].map((_, i) => {
@@ -308,7 +367,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 1000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [words.length]);
 
@@ -317,13 +376,13 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden neobrutalist-bg">
+      <section id="Home" className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden neobrutalist-bg">
         <motion.div
           style={{ y: backgroundY }}
           className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20"
         >
-          <div className="w-[800px] h-[800px] border border-orange-500/20 rounded-full animate-pulse" />
-          <div className="absolute w-[600px] h-[600px] border border-orange-400/20 rounded-full animate-pulse delay-500" />
+          <div className="w-[800px] h-[800px] border border-[#7DD3FC]/20 rounded-full animate-pulse" />
+          <div className="absolute w-[600px] h-[600px] border border-[#7DD3FC]/20 rounded-full animate-pulse delay-500" />
         </motion.div>
 
         <div className="relative z-10 text-center space-y-8 max-w-4xl">
@@ -335,7 +394,7 @@ export default function Home() {
             className="text-5xl md:text-7xl font-black tracking-tight text-black"
           >
             Crafting <span style={{ paddingRight: 10 }} className="text-black">Mobile</span><br />
-            <div className="relative h-[1.2em] flex justify-center items-center">
+            <div className="relative h-[1.2em] flex justify-center items-center overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={words[wordIndex]}
@@ -355,15 +414,9 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            style={{
-              marginLeft: 20,
-              marginRight: 20,
-              marginTop: 40,
-              marginBottom: 40,
-            }}
-            className="text-xl md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed px-4 mt-5 mb-5 md:mt-10 md:mb-10"
           >
-            I&apos;m <span className="text-black font-extrabold text-3xl md:text-5xl leading-tight">Saad Khalil</span>. I help startups launch high-performance cross-platform apps in half the time.
+            I&apos;m <span className="text-black font-extrabold text-2xl md:text-5xl leading-tight">Saad Khalil</span>. I help startups launch high-performance cross-platform apps in half the time.
           </motion.p>
 
           <motion.div
@@ -389,10 +442,10 @@ export default function Home() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-black/40"
         >
-          <div className="w-6 h-10 rounded-full border-2 border-slate-700 flex justify-center p-1">
-            <div className="w-1 h-2 bg-slate-500 rounded-full" />
+          <div className="w-6 h-10 rounded-full border-2 border-black/40 flex justify-center p-1">
+            <div className="w-1 h-2 bg-black/40 rounded-full" />
           </div>
         </motion.div>
       </section>
@@ -401,7 +454,7 @@ export default function Home() {
       <section style={{
         paddingBottom: 100,
         paddingTop: 70,
-      }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-y-4 border-black">
+      }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center bg-white border-y-4 border-black">
         <SectionHeading subtitle="Technical stack & specializations">Expertise</SectionHeading>
         <div style={{
           marginTop: 20,
@@ -457,7 +510,7 @@ export default function Home() {
             >
               <div className="relative aspect-video w-full overflow-hidden border-b-4 border-black">
 
-                <div style={{ paddingLeft: 15, paddingTop: 40 }} className="absolute inset-0 flex items-center pl-12 sm:pl-20">
+                <div className="absolute inset-0 flex items-center justify-center sm:justify-start sm:pl-20">
                   <div className="relative w-42 h-42 sm:w-44 sm:h-44 md:w-52 md:h-52 flex-shrink-0 overflow-hidden border-4 border-black bg-[#f4f4f4] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                     <Image
                       src={app.logo}
@@ -492,7 +545,7 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
+      <section style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center bg-white border-b-4 border-black">
         <SectionHeading subtitle="From first call to App Store — here's exactly how we work together">How It Works</SectionHeading>
         <div style={{ marginTop: 40 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-7xl">
           {processSteps.map((step, idx) => (
@@ -513,8 +566,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
+      {/* Pricing Section — temporarily hidden */}
+      {/* <section id="pricing" style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
         <SectionHeading subtitle="Transparent pricing for every stage of your journey">Pricing Plans</SectionHeading>
         <div style={{ marginTop: 40 }} className="grid grid-cols-1 md:grid-cols-3 gap-0 w-full max-w-6xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
           {pricingPlans.map((plan, idx) => (
@@ -573,8 +626,11 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-        <p style={{ marginTop: 24 }} className="text-black/50 text-sm font-bold text-center">All plans include a free 30-min discovery call &mdash; no commitment needed.</p>
-      </section>
+        <div style={{ marginTop: 24 }} className="text-center space-y-1">
+          <p className="text-black/50 text-sm font-bold">All plans include a free 30-min discovery call &mdash; no commitment needed.</p>
+          <p className="text-black/40 text-xs font-bold uppercase tracking-wider">Scale retainer = ongoing velocity at ~$50/hr · cancel anytime</p>
+        </div>
+      </section> */}
 
       {/* Reviews Section */}
       <section
@@ -582,7 +638,7 @@ export default function Home() {
           paddingBottom: 100,
           paddingTop: 70,
         }}
-        className="py-32 px-6 neobrutalist-bg border-b-4 border-black overflow-hidden">
+        className="py-32 px-6 bg-white border-b-4 border-black overflow-hidden">
         <SectionHeading subtitle="What my partners and clients say about our collaboration">Client Feedback</SectionHeading>
 
         <div className="relative mt-12 flex">
@@ -626,20 +682,20 @@ export default function Home() {
           <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
             Book a Free 30-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 pt-4">
-            <a style={{ minWidth: 200 }} href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none">
-              <SiGmail style={{ marginRight: 5 }} className="w-5 h-5 mr-4" /> Book a Strategy Call
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 pt-4 w-full max-w-md mx-auto sm:max-w-none">
+            <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none w-full sm:w-auto justify-center">
+              <SiGmail className="w-5 h-5 mr-3" /> Book a Strategy Call
             </a>
-            <a style={{ minWidth: 200 }} href="https://wa.me/923229953346" className="btn-neo-white rounded-none">
-              <SiWhatsapp style={{ marginRight: 5 }} className="w-5 h-5 mr-4" /> WhatsApp
+            <a href="https://wa.me/923229953346" className="btn-neo-white rounded-none w-full sm:w-auto justify-center">
+              <SiWhatsapp className="w-5 h-5 mr-3" /> WhatsApp
             </a>
           </div>
         </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-slate-900 text-center text-slate-500">
-        <p>© 2025 Muhammad Saad. Developed with React & Framer Motion.</p>
+      <footer className="py-8 px-6 bg-black border-t-4 border-black text-center">
+        <p className="text-white/50 font-bold uppercase tracking-wider text-sm">© 2026 Muhammad Saad Khalil — Built with Next.js & Framer Motion.</p>
       </footer>
 
       {/* App Details Overlay */}
@@ -652,14 +708,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-[#ff6a00]/95 overflow-y-auto px-6 py-12"
           >
-            <div
-              style={{
-                paddingBottom: 100,
-                paddingTop: 40,
-                paddingLeft: 50,
-                paddingRight: 10,
-              }}
-              className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-16 relative">
+            <div className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-6 md:p-16 pb-20 relative">
               <motion.button
               style={{
                 marginBottom: 20,
