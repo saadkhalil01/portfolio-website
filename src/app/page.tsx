@@ -31,7 +31,13 @@ const apps = [
     links: {
       appstore: "https://apps.apple.com/pk/app/myndspark/id6739531918",
       playstore: "https://play.google.com/store/apps/details?id=com.myndspark"
-    }
+    },
+    screenshots: [
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.04.12_PM_wx3upe.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.01.19_PM_m1jxcf.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.04.22_PM_td4xrg.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.15.44_PM_foftpg.png",
+    ]
   },
   {
     id: 2,
@@ -45,11 +51,9 @@ const apps = [
       appstore: "https://apps.apple.com/pk/app/loyalai-modern-love-tracker/id6747716993"
     },
     screenshots: [
-      "/loyalai/iMockup - iPhone 15 Pro1 Max.png",
-      "/loyalai/iMockup - iPhone 15 Pro Max (1).png",
-      "/loyalai/iMockup - iPhone 15 Pro Max (2).png",
-      "/loyalai/iMockup - iPhone 15 Pro Max (3).png",
-      "/loyalai/iMockup - iPhone 15 Pro Max-2.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240911/Screenshot_2025-11-26_at_9.49.53_PM_kbaoch.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_9.49.31_PM_hosndn.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_9.49.09_PM_atobin.png",
     ]
   },
   {
@@ -62,7 +66,12 @@ const apps = [
     bg: "bg-pink-500/10",
     links: {
       appstore: "https://apps.apple.com/pk/app/fangenie/id6751832502"
-    }
+    },
+    screenshots: [
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240911/Screenshot_2026-04-15_at_12.52.22_PM_dfnahd.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240911/Screenshot_2026-04-15_at_12.52.41_PM_aetjc4.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240911/Screenshot_2026-04-15_at_12.52.32_PM_ykfoqb.png",
+    ]
   },
   {
     id: 4,
@@ -257,34 +266,34 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <div style={{ position: 'fixed', top: 68, right: 12, zIndex: 40 }} className="sm:hidden">
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.15 }}
-            className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-            style={{ minWidth: 200 }}
-          >
-            {links.map(l => (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.15 }}
+              className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              style={{ minWidth: 200 }}
+            >
+              {links.map(l => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setIsOpen(false)}
+                  style={{ paddingLeft: 20, paddingTop: 16, paddingBottom: 16 }}
+                  className="block text-black font-black uppercase text-sm border-b-2 border-black hover:bg-black hover:text-white transition-colors"
+                >
+                  {l.label}
+                </a>
+              ))}
               <a
-                key={l.href}
-                href={l.href}
+                href="mailto:saadkhalil9999@gmail.com"
                 onClick={() => setIsOpen(false)}
                 style={{ paddingLeft: 20, paddingTop: 16, paddingBottom: 16 }}
-                className="block text-black font-black uppercase text-sm border-b-2 border-black hover:bg-black hover:text-white transition-colors"
+                className="block bg-black text-white font-black uppercase text-sm tracking-widest"
               >
-                {l.label}
+                Strategy Call →
               </a>
-            ))}
-            <a
-              href="mailto:saadkhalil9999@gmail.com"
-              onClick={() => setIsOpen(false)}
-              style={{ paddingLeft: 20, paddingTop: 16, paddingBottom: 16 }}
-              className="block bg-black text-white font-black uppercase text-sm tracking-widest"
-            >
-              Strategy Call →
-            </a>
-          </motion.div>
+            </motion.div>
           </div>
         )}
       </AnimatePresence>
@@ -699,20 +708,21 @@ export default function Home() {
       </footer>
 
       {/* App Details Overlay */}
-      <AnimatePresence>
+      <AnimatePresence
+      >
         {selectedApp && (
           <motion.div
-
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-[#ff6a00]/95 overflow-y-auto px-6 py-12"
+            className="fixed inset-0 z-[100] bg-[#7DD3FC]/95 overflow-y-auto px-10 py-12"
           >
-            <div className="max-w-6xl mx-auto bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-6 md:p-16 pb-20 relative">
+            <div
+              style={{padding: '30px' }} className="w-full bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-6 md:p-16 pb-20 relative">
               <motion.button
-              style={{
-                marginBottom: 20,
-              }}
+                style={{
+                  marginBottom: 20,
+                }}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 onClick={() => setSelectedApp(null)}
@@ -769,26 +779,27 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                {/* <motion.div
+                <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="relative aspect-[9/16] lg:aspect-square bg-slate-900 rounded-[3rem] overflow-hidden glass-panel flex items-center justify-center p-8"
+                  style={{padding:'0px'}}
+                  // className="bg-slate-900 rounded-[3rem] overflow-hidden glass-panel flex items-center justify-center p-8"
                 >
                   {selectedApp.screenshots ? (
-                    <div className="flex gap-4 overflow-x-auto p-4 snap-x no-scrollbar">
+                    <div>
                       {selectedApp.screenshots.map((shot, idx) => (
-                        <div key={idx} className="relative min-w-[280px] h-[500px] rounded-2xl overflow-hidden snap-center shadow-2xl">
-                          <Image src={shot} alt="Screenshot" fill className="object-cover" />
+                        <div key={idx}  style={{marginBottom:10}} className="relative w-full aspect-video overflow-hidden snap-start">
+                          <Image style={{backgroundColor:"#0D0F28"}} src={shot} fill className="object-contain object-center" alt="Screenshot"/>
                         </div>
                       ))}
                     </div>
                   ) : (
                     <div className={`w-full h-full ${selectedApp.bg} opacity-50 flex items-center justify-center`}>
-                      <Layers className="w-20 h-20 text-white/20" />
+                      <span className="text-white/20 text-6xl">📱</span>
                     </div>
                   )}
-                </motion.div> */}
+                </motion.div>
               </div>
             </div>
           </motion.div>
