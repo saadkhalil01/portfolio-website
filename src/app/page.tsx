@@ -641,6 +641,31 @@ export default function Home() {
         </div>
       </section> */}
 
+      <section className="py-32 px-6 neobrutalist-bg">
+        <motion.div
+          style={{
+            paddingBottom: 100,
+            paddingTop: 70,
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mx-auto text-center space-y-8 max-w-8xl"
+        >
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to <span className="text-white">Launch</span> in <br />half the time?</h2>
+          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
+            Book a Free 30-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 pt-4 w-full max-w-md mx-auto sm:max-w-none">
+            <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none w-full sm:w-auto justify-center">
+              <SiGmail className="w-5 h-5 mr-3" /> Book a Strategy Call
+            </a>
+            <a href="https://wa.me/923229953346" className="btn-neo-white rounded-none w-full sm:w-auto justify-center">
+              <SiWhatsapp className="w-5 h-5 mr-3" /> WhatsApp
+            </a>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Reviews Section */}
       <section
         style={{
@@ -677,31 +702,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-32 px-6 neobrutalist-bg">
-        <motion.div
-          style={{
-            paddingBottom: 100,
-            paddingTop: 70,
-          }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="mx-auto text-center space-y-8 max-w-8xl"
-        >
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to <span className="text-white">Launch</span> in <br />half the time?</h2>
-          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
-            Book a Free 30-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
-          </p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 pt-4 w-full max-w-md mx-auto sm:max-w-none">
-            <a href="mailto:saadkhalil9999@gmail.com" className="btn-neo-black rounded-none w-full sm:w-auto justify-center">
-              <SiGmail className="w-5 h-5 mr-3" /> Book a Strategy Call
-            </a>
-            <a href="https://wa.me/923229953346" className="btn-neo-white rounded-none w-full sm:w-auto justify-center">
-              <SiWhatsapp className="w-5 h-5 mr-3" /> WhatsApp
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
       {/* Footer */}
       <footer className="py-8 px-6 bg-black border-t-4 border-black text-center">
         <p className="text-white/50 font-bold uppercase tracking-wider text-sm">© 2026 Muhammad Saad Khalil — Built with Next.js & Framer Motion.</p>
@@ -715,7 +715,8 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-[#7DD3FC]/95 overflow-y-auto px-10 py-12"
+            style={{ backgroundColor: 'rgba(65, 105, 225, 0.95)' }}
+            className="fixed inset-0 z-[100] overflow-y-auto px-10 py-12"
           >
             <div
               style={{padding: '30px' }} className="w-full bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-6 md:p-16 pb-20 relative">
