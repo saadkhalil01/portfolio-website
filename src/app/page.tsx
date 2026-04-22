@@ -390,8 +390,8 @@ export default function Home() {
           style={{ y: backgroundY }}
           className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20"
         >
-          <div className="w-[800px] h-[800px] border border-[#7DD3FC]/20 rounded-full animate-pulse" />
-          <div className="absolute w-[600px] h-[600px] border border-[#7DD3FC]/20 rounded-full animate-pulse delay-500" />
+          <div className="w-[800px] h-[800px] border border-[rgb(209, 81, 81)]/20 rounded-full animate-pulse" />
+          <div className="absolute w-[600px] h-[600px] border border-[rgb(209, 81, 81)]/20 rounded-full animate-pulse delay-500" />
         </motion.div>
 
         <div className="relative z-10 text-center space-y-8 max-w-4xl">
@@ -715,7 +715,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            style={{ backgroundColor: 'rgba(65, 105, 225, 0.95)' }}
+            style={{ backgroundColor: 'rgb(209, 81, 81)' }}
             className="fixed inset-0 z-[100] overflow-y-auto px-10 py-12"
           >
             <div
