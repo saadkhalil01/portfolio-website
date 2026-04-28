@@ -32,8 +32,8 @@ const apps = [
       playstore: "https://play.google.com/store/apps/details?id=com.myndspark"
     },
     screenshots: [
-      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.04.12_PM_wx3upe.png",
       "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.01.19_PM_m1jxcf.png",
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.04.12_PM_wx3upe.png",
       "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.04.22_PM_td4xrg.png",
       "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_10.15.44_PM_foftpg.png",
     ]
@@ -50,9 +50,10 @@ const apps = [
       appstore: "https://apps.apple.com/pk/app/loyalai-modern-love-tracker/id6747716993"
     },
     screenshots: [
-      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240911/Screenshot_2025-11-26_at_9.49.53_PM_kbaoch.png",
       "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_9.49.31_PM_hosndn.png",
       "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240910/Screenshot_2025-11-26_at_9.49.09_PM_atobin.png",
+      
+      "https://res.cloudinary.com/di6f1n6pc/image/upload/f_auto,q_auto/v1776240911/Screenshot_2025-11-26_at_9.49.53_PM_kbaoch.png",
     ]
   },
   {
@@ -440,7 +441,7 @@ export default function Home() {
             >
               <div className="relative aspect-video w-full overflow-hidden border-b-4 border-black">
 
-                <div className="absolute inset-0 flex items-center justify-center sm:justify-start sm:pl-20">
+                <div className="absolute inset-0 flex items-center justify-center sm:justify-start" style={{ paddingLeft: '1rem' }}>
                   <div className="relative w-42 h-42 sm:w-44 sm:h-44 md:w-52 md:h-52 flex-shrink-0 overflow-hidden border-4 border-black bg-[#f4f4f4] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                     <Image
                       src={app.logo}
