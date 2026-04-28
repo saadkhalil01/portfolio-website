@@ -17,6 +17,64 @@ import { SiWhatsapp, SiGmail } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaAppStoreIos, FaGooglePlay } from 'react-icons/fa';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
+// --- Matrix text scramble animation ---
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
+
+function MatrixText({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
+  const [displayed, setDisplayed] = useState(() => text.split(''));
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    let startTimeout: ReturnType<typeof setTimeout>;
+    startTimeout = setTimeout(() => {
+      const resolved = new Array(text.length).fill(false);
+      let frame = 0;
+      const totalFrames = text.length * 6;
+
+      const interval = setInterval(() => {
+        frame++;
+        setDisplayed(prev =>
+          prev.map((_, i) => {
+            if (resolved[i]) return text[i];
+            // resolve each character progressively
+            if (frame > i * 6) {
+              resolved[i] = true;
+              return text[i];
+            }
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          })
+        );
+        if (frame >= totalFrames) {
+          clearInterval(interval);
+          setDone(true);
+        }
+      }, 40);
+
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(startTimeout);
+  }, [text, delay]);
+
+  return (
+    <span className={className}>
+      {displayed.map((char, i) => (
+        <span
+          key={i}
+          style={{
+            color: done || text[i] === ' ' ? undefined : 'rgba(0,0,0,0.45)',
+            transition: 'color 0.1s',
+            display: 'inline-block',
+            width: text[i] === ' ' ? '0.3em' : undefined,
+          }}
+        >
+          {char}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 // --- Data ---
 const apps = [
   {
@@ -324,15 +382,15 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-5xl md:text-7xl font-black tracking-tight text-black"
           >
-            Crafting <span style={{ paddingRight: 10 }} className="text-black">Mobile</span><br />
+            <MatrixText text="Crafting Mobile" className="text-black" delay={300} /><br />
             <div className="relative h-[1.2em] flex justify-center items-center overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={words[wordIndex]}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  initial={{ opacity: 0, x: 80 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -80 }}
+                  transition={{ duration: 0.45, ease: "easeInOut" }}
                   className="text-white absolute whitespace-nowrap"
                 >
                   {words[wordIndex]}.
