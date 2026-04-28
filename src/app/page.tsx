@@ -224,13 +224,13 @@ const pricingPlans = [
 
 
 const SectionHeading = ({ children, subtitle }: { children: React.ReactNode; subtitle?: string }) => (
-  <div className="mb-12 text-center flex flex-col items-center">
+  <div className="mb-16 text-center flex flex-col items-center">
     <motion.h2
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       style={{
-        marginBottom: 10,
+        marginBottom: 16,
       }}
       className="text-4xl md:text-5xl font-black mb-4 text-black uppercase tracking-tighter"
     >
@@ -316,7 +316,7 @@ export default function Home() {
           <div className="absolute w-[600px] h-[600px] border border-[rgb(209, 81, 81)]/20 rounded-full animate-pulse delay-500" />
         </motion.div>
 
-        <div className="relative z-10 text-center space-y-8 max-w-4xl">
+        <div className="relative z-10 text-center max-w-4xl flex flex-col gap-10" style={{  }}>
 
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
@@ -345,7 +345,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-lg md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed px-4 mt-5 mb-5 md:mt-10 md:mb-10"
+            className="text-lg md:text-2xl text-black/80 max-w-2xl mx-auto leading-relaxed px-4"
           >
             I&apos;m <span className="text-black font-extrabold text-2xl md:text-5xl leading-tight">Saad Khalil</span>. I help startups launch high-performance cross-platform apps in half the time.
           </motion.p>
@@ -354,7 +354,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-6 pt-4"
+            className="flex flex-wrap items-center justify-center gap-6"
           >
             <a
               style={{
@@ -383,13 +383,13 @@ export default function Home() {
 
       {/* About / Expertise */}
       <section style={{
-        paddingBottom: 100,
-        paddingTop: 70,
+        paddingBottom: 130,
+        paddingTop: 100,
       }} id="about" className="py-32 px-6 mx-auto flex flex-col items-center bg-white border-y-4 border-black">
         <SectionHeading subtitle="Technical stack & specializations">Expertise</SectionHeading>
         <div style={{
           marginTop: 20,
-        }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-7xl">
+        }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
           {expertise.map((item, idx) => (
             <motion.div
               key={item.title}
@@ -421,13 +421,13 @@ export default function Home() {
 
       {/* Portfolio Grid */}
       <section style={{
-        paddingBottom: 100,
-        paddingTop: 70,
+        paddingBottom: 130,
+        paddingTop: 100,
       }} id="work" className="py-32 px-6 mx-auto flex flex-col items-center neobrutalist-bg border-b-4 border-black">
         <SectionHeading subtitle="How I solved complex problems for my clients">Case Studies</SectionHeading>
         <div style={{
           marginTop: 40,
-        }} className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch w-full max-w-7xl"
+        }} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full max-w-7xl"
         >
           {apps.map((app, idx) => (
             <motion.div
@@ -476,9 +476,9 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section style={{ paddingBottom: 100, paddingTop: 70 }} className="py-32 px-6 mx-auto flex flex-col items-center bg-white border-b-4 border-black">
+      <section style={{ paddingBottom: 130, paddingTop: 100 }} className="py-32 px-6 mx-auto flex flex-col items-center bg-white border-b-4 border-black">
         <SectionHeading subtitle="From first call to App Store — here's exactly how we work together">How It Works</SectionHeading>
-        <div style={{ marginTop: 40 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-7xl">
+        <div style={{ marginTop: 40 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
           {processSteps.map((step, idx) => (
             <motion.div
               key={step.number}
@@ -566,15 +566,15 @@ export default function Home() {
       <section className="py-32 px-6 neobrutalist-bg">
         <motion.div
           style={{
-            paddingBottom: 100,
-            paddingTop: 70,
+            paddingBottom: 130,
+            paddingTop: 100,
           }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="mx-auto text-center space-y-8 max-w-8xl"
         >
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black">Ready to <span className="text-white">Launch</span> in <br />half the time?</h2>
-          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 20, marginTop: 20 }} className="text-black/80 text-xl max-w-2xl mx-auto">
+          <p style={{ textAlign: 'center', alignSelf: "center", margin: "0 auto", marginBottom: 32, marginTop: 32 }} className="text-black/80 text-xl max-w-2xl mx-auto">
             Book a Free 30-Minute Strategy Call and let&apos;s map out the perfect plan for your application.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 pt-4 w-full max-w-md mx-auto sm:max-w-none">
@@ -591,16 +591,16 @@ export default function Home() {
       {/* Reviews Section */}
       <section
         style={{
-          paddingBottom: 100,
-          paddingTop: 70,
+          paddingBottom: 130,
+          paddingTop: 100,
         }}
         className="py-32 px-6 bg-white border-b-4 border-black overflow-hidden">
         <SectionHeading subtitle="What my partners and clients say about our collaboration">Client Feedback</SectionHeading>
 
-        <div className="relative mt-12 flex">
+        <div className="relative mt-16 flex">
           <motion.div
             style={{
-              paddingTop: 40,
+              paddingTop: 20,
             }}
             animate={{
               x: [0, "-50%"],
