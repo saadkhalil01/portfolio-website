@@ -10,7 +10,6 @@ import {
   Zap,
   Cpu,
   Star,
-  Check,
 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import { SiWhatsapp, SiGmail } from 'react-icons/si';
@@ -25,8 +24,7 @@ function MatrixText({ text, className, delay = 0 }: { text: string; className?: 
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    let startTimeout: ReturnType<typeof setTimeout>;
-    startTimeout = setTimeout(() => {
+    const startTimeout = setTimeout(() => {
       const resolved = new Array(text.length).fill(false);
       let frame = 0;
       const totalFrames = text.length * 6;
@@ -214,69 +212,6 @@ const reviews = [
   },
 ];
 
-
-const pricingPlans = [
-  {
-    name: "Starter",
-    tagline: "Ship your MVP fast",
-    price: "$999",
-    period: "one-time",
-    highlight: false,
-    badge: null,
-    description: "Perfect for founders who need a focused, production-ready mobile app to validate their idea.",
-    features: [
-      "1 platform (iOS or Android)",
-      "Up to 5 core screens",
-      "Auth + basic backend",
-      "Push notifications",
-      "App Store submission",
-      "2 weeks of post-launch support",
-    ],
-    cta: "Get Started",
-    ctaHref: "mailto:saadkhalil9999@gmail.com?subject=Starter Plan",
-  },
-  {
-    name: "Growth",
-    tagline: "The full product, done right",
-    price: "$2999",
-    period: "one-time",
-    highlight: true,
-    badge: "Most Popular",
-    description: "For startups ready to launch a polished cross-platform app with payments and AI integration.",
-    features: [
-      "iOS + Android (React Native)",
-      "Unlimited screens",
-      "AI / GPT integration",
-      "Stripe / RevenueCat payments",
-      "Real-time features (WebSockets)",
-      "App Store + Play Store submission",
-      "4 weeks of post-launch support",
-      "Full code handoff + documentation",
-    ],
-    cta: "Book a Call",
-    ctaHref: "mailto:saadkhalil9999@gmail.com?subject=Growth Plan",
-  },
-  {
-    name: "Scale",
-    tagline: "Dedicated engineering partner",
-    price: "$1999",
-    period: "/ month",
-    highlight: false,
-    badge: "Best Value",
-    description: "Ongoing development, feature sprints, and technical leadership — your app keeps growing.",
-    features: [
-      "Everything in Growth",
-      "Dedicated 40 hrs/month",
-      "Weekly sprint demos",
-      "Architecture consulting",
-      "Performance optimization",
-      "Priority Slack support",
-      "Cancel anytime",
-    ],
-    cta: "Let's Talk",
-    ctaHref: "https://wa.me/923229953346",
-  },
-];
 
 // --- Components ---
 

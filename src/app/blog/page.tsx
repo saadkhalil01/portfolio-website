@@ -40,7 +40,7 @@ export default function BlogPage() {
       <section className="bg-white" style={{ paddingTop: 80, paddingBottom: 100, paddingLeft: 40, paddingRight: 40 }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {posts.map((post, idx) => (
+            {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                 <article
                   style={{ padding: 10 }}
